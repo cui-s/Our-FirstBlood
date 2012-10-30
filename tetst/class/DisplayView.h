@@ -21,6 +21,6 @@
 @property (nonatomic) Wall* wallTop;
 @property (nonatomic) Wall* wallRight;
 
--(void)okonau:(int)x:(int)y:(int)w;
+-(void)okonau:(int)x:(int)y:(int)w:(int)v;
 
 @end

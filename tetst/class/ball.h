@@ -15,7 +15,7 @@
     float vectory;
     float velocity;
 }
-- (void)move:(int)x:(int)y:(int)w;
+- (void)move:(int)x:(int)y:(int)w:(int)v;
 
 @property (nonatomic) float vectorx;
 @property (nonatomic) float vectory;

@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad
 {
-	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -26,6 +25,8 @@
     CGSize size = CGSizeMake(320, 400);
     av = [[DisplayView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
+    [av setLength:(400)];
+    [av setWidth:(320)];
     
     
     [[self view] addSubview:av];
@@ -61,7 +62,7 @@
         
         CGFloat slideMult = magnitude / 280;
         
-//        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
+        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
         
         
         
@@ -95,16 +96,33 @@
     
     if(recongizer.self.view.center.x<=40)
         
-        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);}
+        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);
+    
+}
 
 
 
 
 - (void) handleTimer: (NSTimer *) timer
 {
-    //在这里进行处理
-    [av okonau:self.reg_z.view.center.x:self.reg_z.view.center.y:self.reg_z.view.bounds.size.width];
-//    NSLog(@"%f", self.reg_z.view.center.x);
+    //cacluate velocity
+    CGPoint velocity = [self.reg_z velocityInView:self.view];
+    
+    GLfloat imaNoBarPostion = self.reg_z.view.center.x;
+    
+    float tmp = imaNoBarPostion - maeniNoBarPosition;
+    
+    maeniNoBarPosition = sakiNoBarPosition;
+    
+    sakiNoBarPosition = imaNoBarPostion;
+//    NSLog(@"%3.1f", tmp*100 );
+    
+    //dual
+    [av okonau:self.reg_z.view.center.x
+              :self.reg_z.view.center.y
+              :self.reg_z.view.bounds.size.width
+              :tmp*100.0];
+    
 }
 
 - (void)didReceiveMemoryWarning

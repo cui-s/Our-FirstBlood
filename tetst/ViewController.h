@@ -12,6 +12,8 @@
 @interface ViewController : UIViewController
 {
     DisplayView *av;
+    GLfloat maeniNoBarPosition;
+    GLfloat sakiNoBarPosition;
 }
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *reg_z;

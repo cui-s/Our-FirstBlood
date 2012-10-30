@@ -84,8 +84,8 @@
     CGContextDrawPath(context,kCGPathFillStroke);
 }
 
--(void)okonau:(int)x:(int)y:(int)w{
-    [self.bao move:x:y:w];
+-(void)okonau:(int)x:(int)y:(int)w:(int)v{
+    [self.bao move:x:y:w:v];
     
     CGRect refreshRect;
     refreshRect.origin.x = 20;
