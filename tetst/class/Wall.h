@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MyPoint.h"
 
 @interface Wall : NSObject
 {
+    
     
 }
 

@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface MyPoint : NSObject{
-    int xp;
-    int yp;
+    int x;
+    int y;
 }
 
-@property (readwrite, nonatomic) int xp;
-@property (readwrite, nonatomic) int yp;
+@property (readwrite, nonatomic) int x;
+@property (readwrite, nonatomic) int y;
 
 
 @end

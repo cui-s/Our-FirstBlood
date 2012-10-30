@@ -10,7 +10,17 @@
 
 @implementation MyPoint
 
-@synthesize xp;
-@synthesize yp;
+@synthesize x;
+@synthesize y;
+
+- (id)init
+{
+    
+    if(self == [super init]){
+        x = 0;
+        y = 0;
+    }
+    return self;
+}
 
 @end

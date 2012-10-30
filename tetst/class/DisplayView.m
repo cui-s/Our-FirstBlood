@@ -16,6 +16,8 @@
     if (self) {
         // Initialization code
         self.bao = [[Ball alloc]init];
+        self.bao.ballPos.x =50;
+        self.bao.ballPos.y =50;
     }
     return self;
 }
@@ -56,10 +58,7 @@
     
     CGContextBeginPath(context);
         CGContextAddPath(context, thePath);
-        CGContextMoveToPoint(context,self.bao.x,self.bao.y);
-        CGContextAddLineToPoint(context,self.bao.x+5, self.bao.y);
-        CGContextAddLineToPoint(context,self.bao.x+5, self.bao.y+5);
-        CGContextAddLineToPoint(context,self.bao.x, self.bao.y+5);
+        CGContextAddPath(context, [self.bao generatePath]);
     CGContextClosePath(context);
   
 

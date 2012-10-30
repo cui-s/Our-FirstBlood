@@ -63,7 +63,7 @@
         
         CGFloat slideMult = magnitude / 280;
         
-        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
+//        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
         
         
         
@@ -106,7 +106,7 @@
 {
     //在这里进行处理
     [av okonau:self.reg_z.view.center.x:self.reg_z.view.center.y:self.reg_z.view.bounds.size.width];
-    NSLog(@"%f", self.reg_z.view.center.x);
+//    NSLog(@"%f", self.reg_z.view.center.x);
 }
 
 - (void)didReceiveMemoryWarning
