@@ -14,6 +14,8 @@
 
 @property (nonatomic) int length;
 @property (nonatomic) int width;
+@property (nonatomic) int granularity;
+
 @property (nonatomic) Ball* bao;
 @property (nonatomic) Wall* wallLeft;
 @property (nonatomic) Wall* wallTop;

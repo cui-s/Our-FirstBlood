@@ -19,22 +19,27 @@
         self.bao.pos.x =50;
         self.bao.pos.y =50;
         
+        self.granularity = 20;
+        
+        self.width = frame.size.width;
+        self.length = frame.size.height;
+        
         self.wallLeft = [[Wall alloc]init];
-        self.wallLeft.width = 20;
-        self.wallLeft.length = 400;
+        self.wallLeft.width = self.granularity;
+        self.wallLeft.length = self.length;
         self.wallLeft.pos.x = 0;
         self.wallLeft.pos.y = 0;
         
         self.wallTop = [[Wall alloc]init];
-        self.wallTop.width = 280;
-        self.wallTop.length = 20;
-        self.wallTop.pos.x = 20;
+        self.wallTop.width = self.width - self.granularity * 2;
+        self.wallTop.length = self.granularity;
+        self.wallTop.pos.x = self.granularity;
         self.wallTop.pos.y = 0;
         
         self.wallRight = [[Wall alloc]init];
-        self.wallRight.width = 20;
-        self.wallRight.length = 400;
-        self.wallRight.pos.x = 300;
+        self.wallRight.width = self.granularity;
+        self.wallRight.length = self.length;
+        self.wallRight.pos.x = self.width - self.granularity;
         self.wallRight.pos.y = 0;
         
     }

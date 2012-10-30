@@ -26,8 +26,6 @@
     CGSize size = CGSizeMake(320, 400);
     av = [[DisplayView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
-    [av setLength:(400)];
-    [av setWidth:(320)];
     
     
     [[self view] addSubview:av];
