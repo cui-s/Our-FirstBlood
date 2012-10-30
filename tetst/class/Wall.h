@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "MyPoint.h"
+#import "MyRect.h"
 
-@interface Wall : NSObject
+@interface Wall : MyRect
 {
-    
-    
+
 }
 
 @end

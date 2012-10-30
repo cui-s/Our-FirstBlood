@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 
 #import "Ball.h"
-
+#import "Wall.h"
 @interface DisplayView : UIView
 
 @property (nonatomic) int length;
 @property (nonatomic) int width;
 @property (nonatomic) Ball* bao;
+@property (nonatomic) Wall* wallLeft;
+@property (nonatomic) Wall* wallTop;
+@property (nonatomic) Wall* wallRight;
 
 -(void)okonau:(int)x:(int)y:(int)w;
 

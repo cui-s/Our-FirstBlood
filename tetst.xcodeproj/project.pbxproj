@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2FD51C163FAE0000F46706 /* MyRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FD51B163FAE0000F46706 /* MyRect.m */; };
 		3F4E584A163F603A00166022 /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E5849163F603A00166022 /* DisplayView.m */; };
 		3F4E584D163F609A00166022 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584B163F609A00166022 /* Ball.m */; };
 		3F4E5850163F691700166022 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584F163F691700166022 /* Wall.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2FD51A163FAE0000F46706 /* MyRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyRect.h; path = class/basic/MyRect.h; sourceTree = "<group>"; };
+		3F2FD51B163FAE0000F46706 /* MyRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyRect.m; path = class/basic/MyRect.m; sourceTree = "<group>"; };
 		3F4E5848163F603A00166022 /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayView.h; path = class/DisplayView.h; sourceTree = "<group>"; };
 		3F4E5849163F603A00166022 /* DisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayView.m; path = class/DisplayView.m; sourceTree = "<group>"; };
 		3F4E584B163F609A00166022 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ball.m; path = class/Ball.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 			children = (
 				3F4E585B163F6BF600166022 /* MyPoint.h */,
 				3F4E585C163F6BF600166022 /* MyPoint.m */,
+				3F2FD51A163FAE0000F46706 /* MyRect.h */,
+				3F2FD51B163FAE0000F46706 /* MyRect.m */,
 			);
 			name = basic;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				3F4E584D163F609A00166022 /* Ball.m in Sources */,
 				3F4E5850163F691700166022 /* Wall.m in Sources */,
 				3F4E585D163F6BF600166022 /* MyPoint.m in Sources */,
+				3F2FD51C163FAE0000F46706 /* MyRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

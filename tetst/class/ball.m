@@ -10,16 +10,17 @@
 
 @implementation Ball
 
-@synthesize ballPos;
 
 - (id)init
 {
    
     if(self == [super init]){
-        ballPos = [[MyPoint alloc]init];
+        pos = [[MyPoint alloc]init];
         velocity = 2.0;
         vectorx = velocity;
         vectory = velocity;
+        length = 5;
+        width = 5;
     }
     return self;
 }
@@ -28,41 +29,32 @@
 - (void)move:(int)x:(int)y:(int)w;
 {
     
-    self.ballPos.x+= vectorx;
+    self.pos.x+= vectorx;
     
-    if(self.ballPos.x < 20){
+    if(self.pos.x < 20){
         vectorx = velocity;
     }
     
-    if(self.ballPos.x > 300){
+    if(self.pos.x > 300){
         vectorx  = velocity * -1;
     }
     
     
-    self.ballPos.y += vectory;
+    self.pos.y += vectory;
     
-    if(self.ballPos.y < 20){
+    if(self.pos.y < 20){
         vectory = velocity ;
     }
     
-    if(self.ballPos.y > 400 && self.ballPos.x < (x + w/2) && self.ballPos.x > (x - w/2)){
+    if(self.pos.y > 400 && self.pos.x < (x + w/2) && self.pos.x > (x - w/2)){
         vectory  = velocity * -1;
     }
     
-    if(self.ballPos.y > 410){
-        self.ballPos.x = 50;
-        self.ballPos.y = 50;
+    if(self.pos.y > 410){
+        self.pos.x = 50;
+        self.pos.y = 50;
     }
 }
 
-- (CGMutablePathRef)generatePath{
-    CGMutablePathRef thePath=CGPathCreateMutable();
-    CGPathMoveToPoint(thePath,NULL,ballPos.x,ballPos.y);
-    CGPathAddLineToPoint(thePath, NULL, ballPos.x+5, ballPos.y);
-    CGPathAddLineToPoint(thePath, NULL, ballPos.x+5, ballPos.y+5);
-    CGPathAddLineToPoint(thePath, NULL, ballPos.x, ballPos.y+5);
-    CGPathCloseSubpath(thePath);
-    return thePath;
-}
 
 @end

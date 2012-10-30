@@ -8,20 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #include "MyPoint.h"
+#include "MyRect.h"
 
-@interface Ball : NSObject{
-    MyPoint* ballPos;
+@interface Ball : MyRect{
     float vectorx;
     float vectory;
     float velocity;
 }
 - (void)move:(int)x:(int)y:(int)w;
 
-@property (readwrite, nonatomic) MyPoint* ballPos;
 @property (nonatomic) float vectorx;
 @property (nonatomic) float vectory;
 @property (nonatomic) float velocity;
 
-- (CGMutablePathRef)generatePath;
 
 @end

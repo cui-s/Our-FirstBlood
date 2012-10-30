@@ -16,8 +16,13 @@
     if (self) {
         // Initialization code
         self.bao = [[Ball alloc]init];
-        self.bao.ballPos.x =50;
-        self.bao.ballPos.y =50;
+        self.bao.pos.x =50;
+        self.bao.pos.y =50;
+        
+        self.wallLeft = [[Wall alloc]init];
+        self.wallTop = [[Wall alloc]init];
+        self.wallRight = [[Wall alloc]init];
+        
     }
     return self;
 }
@@ -44,20 +49,10 @@
     refreshRect.size.width = 280;
     CGContextClearRect(context, refreshRect);
     
-    CGMutablePathRef thePath=CGPathCreateMutable();
-    CGPathMoveToPoint(thePath,NULL,0,0);
-    CGPathAddLineToPoint(thePath, NULL, self.width, 0);
-    CGPathAddLineToPoint(thePath, NULL, self.width, self.length);
-    CGPathAddLineToPoint(thePath, NULL, self.width - 20, self.length);
-    CGPathAddLineToPoint(thePath, NULL, self.width - 20, 20);
-    CGPathAddLineToPoint(thePath, NULL, 20, 20);
-    CGPathAddLineToPoint(thePath, NULL, 20, self.length);
-    CGPathAddLineToPoint(thePath, NULL, 0, self.length);
-    CGPathCloseSubpath(thePath);
-    
+
     
     CGContextBeginPath(context);
-        CGContextAddPath(context, thePath);
+        //CGContextAddPath(context, thePath);
         CGContextAddPath(context, [self.bao generatePath]);
     CGContextClosePath(context);
   

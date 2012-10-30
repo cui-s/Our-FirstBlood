@@ -9,5 +9,14 @@
 #import "Wall.h"
 
 @implementation Wall
-
+- (id)init
+{
+    
+    if(self == [super init]){
+        pos = [[MyPoint alloc]init];
+        length = 400;
+        width = 20;
+    }
+    return self;
+}
 @end
