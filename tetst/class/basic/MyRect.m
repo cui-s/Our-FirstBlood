@@ -29,9 +29,9 @@
 - (CGMutablePathRef)generatePath{
     CGMutablePathRef thePath=CGPathCreateMutable();
     CGPathMoveToPoint(thePath,NULL,pos.x,pos.y);
-    CGPathAddLineToPoint(thePath, NULL, pos.x+length, pos.y);
-    CGPathAddLineToPoint(thePath, NULL, pos.x+length, pos.y+width);
-    CGPathAddLineToPoint(thePath, NULL, pos.x, pos.y+width);
+    CGPathAddLineToPoint(thePath, NULL, pos.x+width, pos.y);
+    CGPathAddLineToPoint(thePath, NULL, pos.x+width, pos.y+length);
+    CGPathAddLineToPoint(thePath, NULL, pos.x, pos.y+length);
     CGPathCloseSubpath(thePath);
     return thePath;
 }

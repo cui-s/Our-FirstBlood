@@ -20,8 +20,22 @@
         self.bao.pos.y =50;
         
         self.wallLeft = [[Wall alloc]init];
+        self.wallLeft.width = 20;
+        self.wallLeft.length = 400;
+        self.wallLeft.pos.x = 0;
+        self.wallLeft.pos.y = 0;
+        
         self.wallTop = [[Wall alloc]init];
+        self.wallTop.width = 280;
+        self.wallTop.length = 20;
+        self.wallTop.pos.x = 20;
+        self.wallTop.pos.y = 0;
+        
         self.wallRight = [[Wall alloc]init];
+        self.wallRight.width = 20;
+        self.wallRight.length = 400;
+        self.wallRight.pos.x = 300;
+        self.wallRight.pos.y = 0;
         
     }
     return self;
@@ -52,7 +66,9 @@
 
     
     CGContextBeginPath(context);
-        //CGContextAddPath(context, thePath);
+        CGContextAddPath(context, [self.wallLeft generatePath]);
+        CGContextAddPath(context, [self.wallTop generatePath]);
+        CGContextAddPath(context, [self.wallRight generatePath]);
         CGContextAddPath(context, [self.bao generatePath]);
     CGContextClosePath(context);
   
