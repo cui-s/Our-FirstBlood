@@ -1,5 +1,5 @@
 //
-//  ball.h
+//  Ball.h
 //  dt2
 //
 //  Created by zhao-y on 2012/10/29.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ball : NSObject{
+@interface Ball : NSObject{
     int x;
     int y;
     float vectorx;

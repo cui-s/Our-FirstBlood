@@ -1,21 +1,21 @@
 //
-//  testv.m
+//  DisplayView.m
 //  dt2
 //
 //  Created by zhao-y on 2012/10/29.
 //  Copyright (c) 2012年 zhao-y. All rights reserved.
 //
 
-#import "testv.h"
+#import "DisplayView.h"
 
-@implementation testv
+@implementation DisplayView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.bao = [[ball alloc]init];
+        self.bao = [[Ball alloc]init];
     }
     return self;
 }
@@ -42,21 +42,26 @@
     refreshRect.size.width = 280;
     CGContextClearRect(context, refreshRect);
     
-    CGContextBeginPath(context);
-        CGContextMoveToPoint(context,0,0);
-        CGContextAddLineToPoint(context,self.width, 0);
-        CGContextAddLineToPoint(context,self.width, self.length);
-        CGContextAddLineToPoint(context,self.width - 20, self.length);
-        CGContextAddLineToPoint(context,self.width - 20, 20);
-        CGContextAddLineToPoint(context,20, 20);
-        CGContextAddLineToPoint(context,20, self.length);
-        CGContextAddLineToPoint(context,0, self.length);
+    CGMutablePathRef thePath=CGPathCreateMutable();
+    CGPathMoveToPoint(thePath,NULL,0,0);
+    CGPathAddLineToPoint(thePath, NULL, self.width, 0);
+    CGPathAddLineToPoint(thePath, NULL, self.width, self.length);
+    CGPathAddLineToPoint(thePath, NULL, self.width - 20, self.length);
+    CGPathAddLineToPoint(thePath, NULL, self.width - 20, 20);
+    CGPathAddLineToPoint(thePath, NULL, 20, 20);
+    CGPathAddLineToPoint(thePath, NULL, 20, self.length);
+    CGPathAddLineToPoint(thePath, NULL, 0, self.length);
+    CGPathCloseSubpath(thePath);
     
+    
+    CGContextBeginPath(context);
+        CGContextAddPath(context, thePath);
         CGContextMoveToPoint(context,self.bao.x,self.bao.y);
         CGContextAddLineToPoint(context,self.bao.x+5, self.bao.y);
         CGContextAddLineToPoint(context,self.bao.x+5, self.bao.y+5);
         CGContextAddLineToPoint(context,self.bao.x, self.bao.y+5);
     CGContextClosePath(context);
+  
 
     
     [[UIColor blueColor] setFill];

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "testv.h"
+#import "DisplayView.h"
 
 @interface ViewController : UIViewController
 {
-    testv *av;
+    DisplayView *av;
 }
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *reg_z;

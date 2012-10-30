@@ -1,14 +1,14 @@
 //
-//  ball.m
+//  Ball.m
 //  dt2
 //
 //  Created by zhao-y on 2012/10/29.
 //  Copyright (c) 2012年 zhao-y. All rights reserved.
 //
 
-#import "ball.h"
+#import "Ball.h"
 
-@implementation ball
+@implementation Ball
 
 @synthesize x;
 @synthesize y;

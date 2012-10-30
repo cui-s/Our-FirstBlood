@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "testv.h"
+#import "DisplayView.h"
 
 @interface ViewController ()
 
@@ -24,7 +24,7 @@
     
     
     CGSize size = CGSizeMake(320, 400);
-    av = [[testv alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    av = [[DisplayView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
     [av setLength:(400)];
     [av setWidth:(320)];
@@ -40,7 +40,7 @@
                                             repeats: YES];
 }
 
-
+//Inertia Moving
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer{
     
     CGPoint translation = [recongizer translationInView:self.view];
