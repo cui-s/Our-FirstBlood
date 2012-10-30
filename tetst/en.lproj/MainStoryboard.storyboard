@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVD-5v-2v5">
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" image="3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-RN-VBN">
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="a3h-vG-1TE"/>
+                                            <constraint firstAttribute="width" constant="80" id="sYA-m4-y3R"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="2oR-AC-jU8" appends="YES" id="7Mx-q8-uGX"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="centerX" secondItem="ZVD-5v-2v5" secondAttribute="centerX" type="default" id="HrD-1L-Ran"/>
+                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="top" secondItem="ZVD-5v-2v5" secondAttribute="top" constant="405" scoringType="5" id="drP-iQ-0cV"/>
+                                    <constraint firstAttribute="bottom" secondItem="JLP-RN-VBN" secondAttribute="bottom" constant="119" id="zkm-7e-VwM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZVD-5v-2v5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-5" id="0Zu-FD-fn9"/>
+                            <constraint firstItem="ZVD-5v-2v5" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="CBI-AR-htZ"/>
+                            <constraint firstItem="ZVD-5v-2v5" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="jld-wS-NsR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reg_z" destination="2oR-AC-jU8" id="Eug-31-fYJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2oR-AC-jU8">
+                    <connections>
+                        <action selector="handlePan:" destination="2" id="5d7-dx-qWs"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="3.jpg" width="321" height="346"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
