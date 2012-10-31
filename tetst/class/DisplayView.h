@@ -10,6 +10,7 @@
 
 #import "Ball.h"
 #import "Wall.h"
+#import "Coin.h"
 @interface DisplayView : UIView
 
 @property (nonatomic) int length;
@@ -20,6 +21,7 @@
 @property (nonatomic) Wall* wallLeft;
 @property (nonatomic) Wall* wallTop;
 @property (nonatomic) Wall* wallRight;
+@property (nonatomic) Coin* coinTest;
 
 -(void)okonau:(int)x:(int)y:(int)w:(int)v;
 

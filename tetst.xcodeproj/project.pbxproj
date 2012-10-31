@@ -12,6 +12,7 @@
 		3F4E584D163F609A00166022 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584B163F609A00166022 /* Ball.m */; };
 		3F4E5850163F691700166022 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584F163F691700166022 /* Wall.m */; };
 		3F4E585D163F6BF600166022 /* MyPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E585C163F6BF600166022 /* MyPoint.m */; };
+		3F5D598A1640C38D004B91E4 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D59891640C38D004B91E4 /* Coin.m */; };
 		3F69FC0C163E728C0053F7EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0B163E728C0053F7EA /* UIKit.framework */; };
 		3F69FC0E163E728C0053F7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0D163E728C0053F7EA /* Foundation.framework */; };
 		3F69FC10163E728C0053F7EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0F163E728C0053F7EA /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 		3F4E584F163F691700166022 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wall.m; path = class/Wall.m; sourceTree = "<group>"; };
 		3F4E585B163F6BF600166022 /* MyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPoint.h; path = class/basic/MyPoint.h; sourceTree = "<group>"; };
 		3F4E585C163F6BF600166022 /* MyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPoint.m; path = class/basic/MyPoint.m; sourceTree = "<group>"; };
+		3F5D59881640C38D004B91E4 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coin.h; path = class/Coin.h; sourceTree = "<group>"; };
+		3F5D59891640C38D004B91E4 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coin.m; path = class/Coin.m; sourceTree = "<group>"; };
 		3F69FC07163E728C0053F7EA /* tetst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F69FC0B163E728C0053F7EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F69FC0D163E728C0053F7EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 				3F4E5849163F603A00166022 /* DisplayView.m */,
 				3F4E584E163F691700166022 /* Wall.h */,
 				3F4E584F163F691700166022 /* Wall.m */,
+				3F5D59881640C38D004B91E4 /* Coin.h */,
+				3F5D59891640C38D004B91E4 /* Coin.m */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				3F4E5850163F691700166022 /* Wall.m in Sources */,
 				3F4E585D163F6BF600166022 /* MyPoint.m in Sources */,
 				3F2FD51C163FAE0000F46706 /* MyRect.m in Sources */,
+				3F5D598A1640C38D004B91E4 /* Coin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

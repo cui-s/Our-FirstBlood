@@ -40,6 +40,8 @@
 }
 
 //Inertia Moving
+
+
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer{
     
     CGPoint translation = [recongizer translationInView:self.view];
@@ -132,5 +134,38 @@
    
 
 }
+
+- (IBAction)changeSize:(id)sender {
+    
+    
+    UISlider * sld = (UISlider *)sender;
+    float size = sld.value;
+    
+    self.imageStick.bounds = CGRectMake(0, 0, 80*size, 24);
+//    NSLog(@"%f",self.self.reg_z.view.center.x);
+    
+//    NSLog(@"%f",self.imageStick.bounds.size.width);
+    if (self.reg_z.view.center.x - self.imageStick.bounds.size.width/2<20) {
+        self.reg_z.view.center = CGPointMake(20+self.imageStick.bounds.size.width/2,self.reg_z.view.center.y);
+    }
+    if (self.reg_z.view.center.x + self.imageStick.bounds.size.width/2>300) {
+        self.reg_z.view.center = CGPointMake(300-self.imageStick.bounds.size.width/2,self.reg_z.view.center.y);
+        
+        
+    }
+    
+}
+
+- (IBAction)changeBallSpeed:(id)sender {
+    
+    
+    UISlider * sld = (UISlider *)sender;
+    
+    
+    
+    
+    
+}
+
 
 @end
