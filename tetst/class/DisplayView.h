@@ -21,9 +21,8 @@
 @property (nonatomic) Wall* wallLeft;
 @property (nonatomic) Wall* wallTop;
 @property (nonatomic) Wall* wallRight;
-@property (nonatomic) Coin* coinTest;
-@property (nonatomic) Coin* coinTest2;
-@property (nonatomic) Coin* coinTest3;
+
+@property (nonatomic) NSMutableArray* coins;
 
 -(void)okonau:(int)x:(int)y:(int)w:(int)v;
 

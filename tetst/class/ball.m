@@ -32,6 +32,10 @@
 {
     static int gameOverFlag = 0;
     
+    if(fabs(vectorx) < 0.001){
+        vectorx = 1.0
+        ;
+    }
     
     self.pos.x+= vectorx;
     self.pos.y += vectory;
@@ -40,10 +44,10 @@
         
        // NSLog(@"%d", self.pos.y);
         if(pos.y > 700) {
-            pos.x = 50;
-            pos.y = 50;
-            vectorx = velocity;
-            vectory = velocity;
+            pos.x = arc4random()%280 +20;
+            pos.y = arc4random()%100 +20;
+            vectory= velocity;
+            vectorx = (arc4random()%2 - 1 ) * velocity;
             gameOverFlag = 0;
         }
         

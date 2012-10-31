@@ -42,17 +42,16 @@
         self.wallRight.pos.x = self.width - self.granularity;
         self.wallRight.pos.y = 0;
         
-        self.coinTest = [[Coin alloc]init];
-        self.coinTest.pos.x = self.width/3.7;
-        self.coinTest.pos.y = self.length/3;
         
-        self.coinTest2 = [[Coin alloc]init];
-        self.coinTest2.pos.x = self.width/2.9;
-        self.coinTest2.pos.y = self.length/2.4;
         
-        self.coinTest3 = [[Coin alloc]init];
-        self.coinTest3.pos.x = self.width/4 * 3.3;
-        self.coinTest3.pos.y = self.length/4;
+        self.coins = [[NSMutableArray alloc]init];
+        
+        
+        for(int i = 0; i< 300; i++){
+            Coin *coinTest = [[Coin alloc]init];
+            [self.coins addObject:coinTest];
+            
+        }
         
     }
     return self;
@@ -86,9 +85,10 @@
         CGContextAddPath(context, [self.wallLeft generatePath]);
         CGContextAddPath(context, [self.wallTop generatePath]);
         CGContextAddPath(context, [self.wallRight generatePath]);
-        CGContextAddPath(context, [self.coinTest generatePath]);
-        CGContextAddPath(context, [self.coinTest2 generatePath]);
-        CGContextAddPath(context, [self.coinTest3 generatePath]);
+    //Draw Coins
+        for(Coin* onecoin in self.coins){
+            CGContextAddPath(context, [onecoin generatePath]);
+        }
         CGContextAddPath(context, [self.bao generatePath]);
     CGContextClosePath(context);
   
@@ -102,24 +102,16 @@
 -(void)okonau:(int)x:(int)y:(int)w:(int)v{
     [self.bao move:x:y:w:v];
     
-    if([self.coinTest isHitted] == FALSE){        
-        [self.coinTest hitJudge:self.bao.pos.x:self.bao.pos.y];
-    } else {
-        if([self.coinTest catchJudge:x:w]){
+    
+    for(Coin* onecoin in self.coins){
+        if([onecoin isHitted] == FALSE){
+            [onecoin hitJudge:self.bao.pos.x:self.bao.pos.y];
+        } else {
+            if([onecoin catchJudge:x:w]){
+            }
         }
     }
     
-    if([self.coinTest2 isHitted] == FALSE){
-        [self.coinTest2 hitJudge:self.bao.pos.x:self.bao.pos.y];
-    } else {
-        [self.coinTest2 catchJudge:x:w];
-    }
-    
-    if([self.coinTest3 isHitted] == FALSE){
-        [self.coinTest3 hitJudge:self.bao.pos.x:self.bao.pos.y];
-    } else {
-        [self.coinTest3 catchJudge:x:w];
-    }
     
     CGRect refreshRect;
     refreshRect.origin.x = 20;

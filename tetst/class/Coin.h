@@ -13,6 +13,7 @@
 @interface Coin : MyRect{
     BOOL isHitted;
     BOOL isCatched;
+    float velocity;
 }
 
 -(BOOL)hitJudge:(int)x:(int)y;
@@ -20,4 +21,5 @@
 
 @property (nonatomic) BOOL isHitted;
 @property (nonatomic) BOOL isCatched;
+@property (nonatomic) float velocity;
 @end

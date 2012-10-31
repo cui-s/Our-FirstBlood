@@ -18,8 +18,15 @@
     
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        length = 15;
-        width = 15;
+        
+        length = arc4random()%10 + 10;
+        width = arc4random()%10 + 10;
+        pos.x = arc4random()%280 + 20;
+        pos.y = arc4random()%300 + 20;
+        velocity = arc4random()%30/10.0 + 0.7;
+//        NSLog(@"%f", velocity);
+        
+        
         isHitted = FALSE;
         isCatched = FALSE;
     }
@@ -31,7 +38,7 @@
     
     if(pos.x < x && x < (pos.x + width)){
         if(pos.y < y && y < (pos.y + length)){
-            NSLog(@"hit score");
+//            NSLog(@"hit score");
             isHitted = TRUE;
             return TRUE;
         }
@@ -43,12 +50,12 @@
 
 -(BOOL)catchJudge:(int)x:(int)w{
     if(isHitted){
-        pos.y += 1.0;
+        pos.y += velocity;
     }
     
     if(pos.y > 399 && pos.y <410){
         if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){
-            NSLog(@"catch");
+//            NSLog(@"catch");
             isCatched = TRUE;
             return TRUE;
         }
