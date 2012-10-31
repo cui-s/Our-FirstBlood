@@ -16,7 +16,7 @@
     float velocity;
 }
 - (void)move:(int)x:(int)y:(int)w;
-
+-(float)ball_speed:(float)s;
 @property (readwrite, nonatomic) int x;
 @property (readwrite,nonatomic) int y;
 @property (nonatomic) float vectorx;

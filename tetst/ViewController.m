@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import "testv.h"
+#import "ball.h"
 
 @interface ViewController ()
 
@@ -67,13 +68,13 @@
         
         
         
-        float slideFactor = 0.05 * slideMult; // Increase for more of a slide
+        float slideFactor = 0.1 * slideMult; // Increase for more of a slide
         
         CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
                                          
                                          recongizer.view.center.y );
         
-        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
+        finalPoint.x = MIN(MAX(finalPoint.x, 20), self.view.bounds.size.width-20);
         
         finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
         
@@ -90,15 +91,15 @@
         
         
     }
-    
-    if(recongizer.self.view.center.x>=280)
+    float recSize = recongizer.self.view.bounds.size.width/2;
+   if(recongizer.self.view.center.x>=300-recSize)
         
-        recongizer.view.center = CGPointMake(280,recongizer.view.center.y);
+        recongizer.view.center = CGPointMake(300-recSize,recongizer.view.center.y);
     
-    if(recongizer.self.view.center.x<=40)
+    if(recongizer.self.view.center.x<=recSize+20)
         
-        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);}
-
+        recongizer.view.center = CGPointMake(recSize+20,recongizer.view.center.y);}
+    
 
 
 
@@ -106,7 +107,7 @@
 {
     //在这里进行处理
     [av okonau:self.reg_z.view.center.x:self.reg_z.view.center.y:self.reg_z.view.bounds.size.width];
-    NSLog(@"%f", self.reg_z.view.center.x);
+   // NSLog(@"%f", self.reg_z.view.center.x);
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,4 +118,34 @@
 
 }
 
+
+- (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
+    recognizer.view.transform = CGAffineTransformRotate(recognizer.view.transform, recognizer.rotation);
+    recognizer.rotation = 0;
+}
+
+- (IBAction)changeSize:(id)sender {
+    
+    UISlider * sld = (UISlider *)sender;
+    float size = sld.value;
+    
+    self.imageStick.bounds = CGRectMake(0, 0, 80*size, 24);
+   // if (self.imageStick.bounds.origin.x - self.imageStick.bounds.size.width)<20 {
+     //   self.imageStick.CG
+    //}
+   
+  
+
+}
+
+- (IBAction)changeBallSpeed:(id)sender {
+  
+    
+    UISlider * sld = (UISlider *)sender;
+    
+    
+    
+    
+    
+}
 @end

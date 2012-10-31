@@ -22,14 +22,50 @@
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="2oR-AC-jU8" appends="YES" id="7Mx-q8-uGX"/>
+                                            <outletCollection property="gestureRecognizers" destination="EoA-UO-iEj" appends="YES" id="qau-fL-a12"/>
+                                            <outletCollection property="gestureRecognizers" destination="Cco-wz-lYs" appends="YES" id="3Ig-hq-M9k"/>
                                         </connections>
                                     </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Oi-fg-Up6">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="dEW-O6-ZlQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeSize:" destination="2" eventType="valueChanged" id="xhJ-5A-p0V"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMz-hw-GRK">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0x-Qh-HN1">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-cy-Iqj">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="J9r-Cz-BFT"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeBallSpeed:" destination="2" eventType="valueChanged" id="ZdF-mh-8eJ"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="centerX" secondItem="ZVD-5v-2v5" secondAttribute="centerX" type="default" id="HrD-1L-Ran"/>
-                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="top" secondItem="ZVD-5v-2v5" secondAttribute="top" constant="405" scoringType="5" id="drP-iQ-0cV"/>
-                                    <constraint firstAttribute="bottom" secondItem="JLP-RN-VBN" secondAttribute="bottom" constant="119" id="zkm-7e-VwM"/>
+                                    <constraint firstAttribute="bottom" secondItem="xMz-hw-GRK" secondAttribute="bottom" constant="91" id="AlJ-NE-kFn"/>
+                                    <constraint firstAttribute="trailing" secondItem="y0x-Qh-HN1" secondAttribute="trailing" constant="88" id="DAD-6W-Phm"/>
+                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="centerX" secondItem="ZVD-5v-2v5" secondAttribute="centerX" type="default" id="EwH-LU-KvF"/>
+                                    <constraint firstItem="8Oi-fg-Up6" firstAttribute="leading" secondItem="ZVD-5v-2v5" secondAttribute="leading" constant="66" id="Jzp-PP-TID"/>
+                                    <constraint firstItem="y0x-Qh-HN1" firstAttribute="top" secondItem="JLP-RN-VBN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="P4d-6F-THU"/>
+                                    <constraint firstItem="8Oi-fg-Up6" firstAttribute="top" secondItem="JLP-RN-VBN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tnt-Xo-UmF"/>
+                                    <constraint firstItem="y0x-Qh-HN1" firstAttribute="top" secondItem="f6d-cy-Iqj" secondAttribute="top" type="default" id="W1S-KE-sxi"/>
+                                    <constraint firstAttribute="bottom" secondItem="f6d-cy-Iqj" secondAttribute="bottom" constant="89" id="WHM-GW-29b"/>
+                                    <constraint firstItem="xMz-hw-GRK" firstAttribute="top" secondItem="ZVD-5v-2v5" secondAttribute="top" constant="436" scoringType="5" id="cQN-VN-ycc"/>
+                                    <constraint firstAttribute="trailing" secondItem="f6d-cy-Iqj" secondAttribute="trailing" constant="38" id="cjD-kU-vNO"/>
+                                    <constraint firstItem="xMz-hw-GRK" firstAttribute="leading" secondItem="ZVD-5v-2v5" secondAttribute="leading" constant="38" id="hTT-Q0-zq8"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -41,6 +77,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageStick" destination="JLP-RN-VBN" id="rPF-Il-GHa"/>
                         <outlet property="reg_z" destination="2oR-AC-jU8" id="Eug-31-fYJ"/>
                     </connections>
                 </viewController>
@@ -50,7 +87,14 @@
                         <action selector="handlePan:" destination="2" id="5d7-dx-qWs"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="EoA-UO-iEj"/>
+                <rotationGestureRecognizer id="Cco-wz-lYs">
+                    <connections>
+                        <action selector="handleRotate:" destination="2" id="Xnh-56-7JX"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-95" y="40"/>
         </scene>
     </scenes>
     <resources>

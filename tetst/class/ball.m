@@ -57,4 +57,9 @@
     }
 }
 
+
+-(float)ball_speed:(float)s{
+    velocity = s * velocity;
+    return velocity;
+}
 @end
