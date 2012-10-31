@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2FD51C163FAE0000F46706 /* MyRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FD51B163FAE0000F46706 /* MyRect.m */; };
+		3F4E584A163F603A00166022 /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E5849163F603A00166022 /* DisplayView.m */; };
+		3F4E584D163F609A00166022 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584B163F609A00166022 /* Ball.m */; };
+		3F4E5850163F691700166022 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584F163F691700166022 /* Wall.m */; };
+		3F4E585D163F6BF600166022 /* MyPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E585C163F6BF600166022 /* MyPoint.m */; };
 		3F69FC0C163E728C0053F7EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0B163E728C0053F7EA /* UIKit.framework */; };
 		3F69FC0E163E728C0053F7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0D163E728C0053F7EA /* Foundation.framework */; };
 		3F69FC10163E728C0053F7EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0F163E728C0053F7EA /* CoreGraphics.framework */; };
@@ -19,11 +24,19 @@
 		3F69FC25163E728C0053F7EA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F69FC23163E728C0053F7EA /* MainStoryboard.storyboard */; };
 		3F69FC28163E728C0053F7EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F69FC27163E728C0053F7EA /* ViewController.m */; };
 		3F69FC37163E77900053F7EA /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F69FC36163E77900053F7EA /* 3.jpg */; };
-		3F69FC3D163E77AF0053F7EA /* testv.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F69FC3A163E77AF0053F7EA /* testv.m */; };
-		3F69FC3E163E77AF0053F7EA /* ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F69FC3B163E77AF0053F7EA /* ball.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2FD51A163FAE0000F46706 /* MyRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyRect.h; path = class/basic/MyRect.h; sourceTree = "<group>"; };
+		3F2FD51B163FAE0000F46706 /* MyRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyRect.m; path = class/basic/MyRect.m; sourceTree = "<group>"; };
+		3F4E5848163F603A00166022 /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayView.h; path = class/DisplayView.h; sourceTree = "<group>"; };
+		3F4E5849163F603A00166022 /* DisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayView.m; path = class/DisplayView.m; sourceTree = "<group>"; };
+		3F4E584B163F609A00166022 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ball.m; path = class/Ball.m; sourceTree = "<group>"; };
+		3F4E584C163F609A00166022 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = class/Ball.h; sourceTree = "<group>"; };
+		3F4E584E163F691700166022 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wall.h; path = class/Wall.h; sourceTree = "<group>"; };
+		3F4E584F163F691700166022 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wall.m; path = class/Wall.m; sourceTree = "<group>"; };
+		3F4E585B163F6BF600166022 /* MyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPoint.h; path = class/basic/MyPoint.h; sourceTree = "<group>"; };
+		3F4E585C163F6BF600166022 /* MyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPoint.m; path = class/basic/MyPoint.m; sourceTree = "<group>"; };
 		3F69FC07163E728C0053F7EA /* tetst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F69FC0B163E728C0053F7EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F69FC0D163E728C0053F7EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,10 +54,6 @@
 		3F69FC26163E728C0053F7EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3F69FC27163E728C0053F7EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F69FC36163E77900053F7EA /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = res/3.jpg; sourceTree = "<group>"; };
-		3F69FC39163E77AF0053F7EA /* testv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testv.h; path = class/testv.h; sourceTree = "<group>"; };
-		3F69FC3A163E77AF0053F7EA /* testv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = testv.m; path = class/testv.m; sourceTree = "<group>"; };
-		3F69FC3B163E77AF0053F7EA /* ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ball.m; path = class/ball.m; sourceTree = "<group>"; };
-		3F69FC3C163E77AF0053F7EA /* ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ball.h; path = class/ball.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F4E5854163F6A7E00166022 /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				3F4E585B163F6BF600166022 /* MyPoint.h */,
+				3F4E585C163F6BF600166022 /* MyPoint.m */,
+				3F2FD51A163FAE0000F46706 /* MyRect.h */,
+				3F2FD51B163FAE0000F46706 /* MyRect.m */,
+			);
+			name = basic;
+			sourceTree = "<group>";
+		};
 		3F69FBFC163E728C0053F7EA = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +140,13 @@
 		3F69FC38163E77A40053F7EA /* class */ = {
 			isa = PBXGroup;
 			children = (
-				3F69FC39163E77AF0053F7EA /* testv.h */,
-				3F69FC3A163E77AF0053F7EA /* testv.m */,
-				3F69FC3B163E77AF0053F7EA /* ball.m */,
-				3F69FC3C163E77AF0053F7EA /* ball.h */,
+				3F4E5854163F6A7E00166022 /* basic */,
+				3F4E584B163F609A00166022 /* Ball.m */,
+				3F4E584C163F609A00166022 /* Ball.h */,
+				3F4E5848163F603A00166022 /* DisplayView.h */,
+				3F4E5849163F603A00166022 /* DisplayView.m */,
+				3F4E584E163F691700166022 /* Wall.h */,
+				3F4E584F163F691700166022 /* Wall.m */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -198,8 +221,11 @@
 				3F69FC18163E728C0053F7EA /* main.m in Sources */,
 				3F69FC1C163E728C0053F7EA /* AppDelegate.m in Sources */,
 				3F69FC28163E728C0053F7EA /* ViewController.m in Sources */,
-				3F69FC3D163E77AF0053F7EA /* testv.m in Sources */,
-				3F69FC3E163E77AF0053F7EA /* ball.m in Sources */,
+				3F4E584A163F603A00166022 /* DisplayView.m in Sources */,
+				3F4E584D163F609A00166022 /* Ball.m in Sources */,
+				3F4E5850163F691700166022 /* Wall.m in Sources */,
+				3F4E585D163F6BF600166022 /* MyPoint.m in Sources */,
+				3F2FD51C163FAE0000F46706 /* MyRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +342,7 @@
 				3F69FC2D163E728C0053F7EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

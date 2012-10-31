@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "testv.h"
+#import "DisplayView.h"
 
 @interface ViewController ()
 
@@ -18,13 +18,12 @@
 
 - (void)viewDidLoad
 {
-	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
     
     CGSize size = CGSizeMake(320, 400);
-    av = [[testv alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    av = [[DisplayView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
     [av setLength:(400)];
     [av setWidth:(320)];
@@ -40,7 +39,7 @@
                                             repeats: YES];
 }
 
-
+//Inertia Moving
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer{
     
     CGPoint translation = [recongizer translationInView:self.view];
@@ -54,40 +53,40 @@
     [recongizer setTranslation:CGPointMake(0, 0) inView:self.view];
     
     if (recongizer.state == UIGestureRecognizerStateEnded) {
-        
-        
-        
-        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
-        
-        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
-        
-        CGFloat slideMult = magnitude / 280;
-        
-        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
-        
-        
-        
-        float slideFactor = 0.05 * slideMult; // Increase for more of a slide
-        
-        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
-                                         
-                                         recongizer.view.center.y );
-        
-        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
-        
-        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
-        
-        
-        
-        [UIView animateWithDuration:slideFactor*2 delay:0
-         
-                            options:UIViewAnimationOptionCurveEaseOut animations:^{
-                                
-                                recongizer.view.center = finalPoint;
-                                
-                            } completion:nil];
-        
-        
+//        
+//        
+//        
+//        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
+//        
+//        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
+//        
+//        CGFloat slideMult = magnitude / 280;
+//        
+////        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
+//        
+//        
+//        
+//        float slideFactor = 0.1 * slideMult; // Increase for more of a slide
+//        
+//        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
+//                                         
+//                                         recongizer.view.center.y );
+//        
+//        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
+//        
+//        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
+//        
+//        
+//        
+//        [UIView animateWithDuration:slideFactor*2 delay:0
+//         
+//                            options:UIViewAnimationOptionCurveEaseOut animations:^{
+//                                
+//                                recongizer.view.center = finalPoint;
+//                                
+//                            } completion:nil];
+//        
+//        
         
     }
     
@@ -97,16 +96,33 @@
     
     if(recongizer.self.view.center.x<=40)
         
-        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);}
+        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);
+    
+}
 
 
 
 
 - (void) handleTimer: (NSTimer *) timer
 {
-    //在这里进行处理
-    [av okonau:self.reg_z.view.center.x:self.reg_z.view.center.y:self.reg_z.view.bounds.size.width];
-    NSLog(@"%f", self.reg_z.view.center.x);
+    //cacluate velocity
+    CGPoint velocity = [self.reg_z velocityInView:self.view];
+    
+    GLfloat imaNoBarPostion = self.reg_z.view.center.x;
+    
+    float tmp = imaNoBarPostion - maeniNoBarPosition;
+    
+    maeniNoBarPosition = sakiNoBarPosition;
+    
+    sakiNoBarPosition = imaNoBarPostion;
+//    NSLog(@"%3.1f", tmp*100 );
+    
+    //dual
+    [av okonau:self.reg_z.view.center.x
+              :self.reg_z.view.center.y
+              :self.reg_z.view.bounds.size.width
+              :tmp*100.0];
+    
 }
 
 - (void)didReceiveMemoryWarning
