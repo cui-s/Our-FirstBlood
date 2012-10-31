@@ -121,7 +121,7 @@
     }
     
     [self.coins removeObjectsInArray:forRemove];
-    NSLog(@"coins: %d", self.coins.count);
+//    NSLog(@"coins: %d", self.coins.count);
     
     CGRect refreshRect;
     refreshRect.origin.x = 20;

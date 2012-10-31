@@ -17,8 +17,8 @@
    
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        velocity = 2.3;
-        maxSpeed = 5.0;
+        velocity = 2.5;
+        maxSpeed = 7.0;
         vectorx = velocity;
         vectory = velocity;
         length = 5;
@@ -86,7 +86,7 @@
                     vectorx *= -1.0;
                 }
             
-                NSLog(@"hit %f", vectorx);
+//                NSLog(@"hit %f", vectorx);
             }
             }
         }
@@ -101,11 +101,14 @@
     
         if(self.pos.y > 410){
             
-            NSLog(@"GameOver, %d, %d, xmax:%d", self.pos.x, self.pos.y, x + w/2 +1);
+//            NSLog(@"GameOver, %d, %d, xmax:%d", self.pos.x, self.pos.y, x + w/2 +1);
             gameOverFlag = 1;
         }
     }
-    self.pos.y += 1.0;
+    
+    // fake gravity
+    self.pos.y += 0.67;
+    
     if(vectorx > maxSpeed){
         vectorx = 5.0;
     }
