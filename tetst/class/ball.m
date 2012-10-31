@@ -9,7 +9,7 @@
 #import "Ball.h"
 
 @implementation Ball
-
+@synthesize velocity;
 
 - (id)init
 {

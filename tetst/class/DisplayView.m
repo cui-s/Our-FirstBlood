@@ -79,7 +79,7 @@
   
 
     
-    [[UIColor blueColor] setFill];
+    [[UIColor grayColor] setFill];
     [[UIColor grayColor] setStroke];
     CGContextDrawPath(context,kCGPathFillStroke);
 }
