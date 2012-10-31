@@ -24,7 +24,7 @@
                                             <outletCollection property="gestureRecognizers" destination="2oR-AC-jU8" appends="YES" id="7Mx-q8-uGX"/>
                                         </connections>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-vQ-e8D">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-vQ-e8D">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="4oi-LS-o0A"/>
                                         </constraints>
@@ -74,21 +74,6 @@
     <resources>
         <image name="3.jpg" width="321" height="346"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeBallSpeed:"/>
-                <relationship kind="action" name="changeSize:"/>
-                <relationship kind="action" name="handlePan:" candidateClass="UIPanGestureRecognizer"/>
-                <relationship kind="outlet" name="imageStick" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="reg_z" candidateClass="UIPanGestureRecognizer"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
