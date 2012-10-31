@@ -16,7 +16,7 @@
    
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        velocity = 1.9;
+        velocity = 10;
         vectorx = velocity;
         vectory = velocity;
         length = 5;
@@ -69,7 +69,7 @@
             }
         }
     
-        if(self.pos.y < 411 && self.pos.y > 399 && self.pos.x < (x + w/2)  && self.pos.x > (x - w/2)){
+        if(self.pos.y < 411 && self.pos.y > 399 && self.pos.x < (x + w/2 +1)  && self.pos.x > (x - w/2 -1)){
             if(vectory > 0) {
 //            NSLog(@"*1%d, %d, %d, %d, %f", (x + w/2),(x - w/2), self.pos.x, self.pos.y, vectory);
             vectory  = vectory * -1.0;
@@ -95,7 +95,7 @@
 //        }
     
         if(self.pos.y > 410){
-            NSLog(@"GameOver, %d", self.pos.y);
+            NSLog(@"GameOver, %d, %d, xmax:%d", self.pos.x, self.pos.y, x + w/2 +1);
             gameOverFlag = 1;
         }
     }
