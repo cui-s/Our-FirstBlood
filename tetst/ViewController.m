@@ -30,9 +30,9 @@
     
     
     [[self view] addSubview:av];
-    
+    //create timer
     NSTimer *timer;
-    timer = [NSTimer scheduledTimerWithTimeInterval: 0.01
+    timer = [NSTimer scheduledTimerWithTimeInterval: 0.017
                                              target: self
                                            selector: @selector(handleTimer:)
                                            userInfo: nil

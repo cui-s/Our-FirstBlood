@@ -17,7 +17,7 @@
    
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        velocity = 2.0;
+        velocity = 2.3;
         maxSpeed = 5.0;
         vectorx = velocity;
         vectory = velocity;
@@ -78,10 +78,10 @@
             if(vectory > 0) {
 //            NSLog(@"*1%d, %d, %d, %d, %f", (x + w/2),(x - w/2), self.pos.x, self.pos.y, vectory);
             vectory  = vectory * -1.0;
-            vectory  = vectory - 0.5;
+            vectory  = vectory * 1.3;
 //            NSLog(@"*2%d, %d, %d, %d, %f", (x + w/2),(x - w/2), self.pos.x, self.pos.y, vectory);
             if(v != 0) {
-                vectorx += 0.5;
+                vectorx *= 1.3;
                 if(v * vectorx < 0){
                     vectorx *= -1.0;
                 }

@@ -13,13 +13,15 @@
 @interface Coin : MyRect{
     BOOL isHitted;
     BOOL isCatched;
+    BOOL isMissed;
     float velocity;
 }
 
 -(BOOL)hitJudge:(int)x:(int)y;
 -(BOOL)catchJudge:(int)x:(int)w;
 
-@property (nonatomic) BOOL isHitted;
-@property (nonatomic) BOOL isCatched;
+@property (atomic) BOOL isHitted;
+@property (atomic) BOOL isCatched;
+@property (atomic) BOOL isMissed;
 @property (nonatomic) float velocity;
 @end

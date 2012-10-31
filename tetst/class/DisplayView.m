@@ -47,10 +47,9 @@
         self.coins = [[NSMutableArray alloc]init];
         
         
-        for(int i = 0; i< 300; i++){
+        for(int i = 0; i< 5000; i++){
             Coin *coinTest = [[Coin alloc]init];
             [self.coins addObject:coinTest];
-            
         }
         
     }
@@ -110,8 +109,19 @@
             if([onecoin catchJudge:x:w]){
             }
         }
+        
     }
     
+    NSMutableArray*forRemove = [[NSMutableArray alloc]init];
+    
+    for(Coin* onecoin in self.coins){
+        if(onecoin.isCatched == true || onecoin.isMissed){
+            [forRemove addObject:onecoin];
+        }
+    }
+    
+    [self.coins removeObjectsInArray:forRemove];
+    NSLog(@"coins: %d", self.coins.count);
     
     CGRect refreshRect;
     refreshRect.origin.x = 20;

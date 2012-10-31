@@ -12,6 +12,7 @@
 
 @synthesize isHitted;
 @synthesize isCatched;
+@synthesize isMissed;
 
 - (id)init
 {
@@ -29,15 +30,16 @@
         
         isHitted = FALSE;
         isCatched = FALSE;
+        isMissed = FALSE;
     }
     return self;
 }
 
 
 -(BOOL)hitJudge:(int)x:(int)y;{
-    
-    if(pos.x < x && x < (pos.x + width)){
-        if(pos.y < y && y < (pos.y + length)){
+    //NSLog(@"isHitted Judge");
+    if(pos.x -1 < x && x < (pos.x + width + 1)){
+        if(pos.y - 1 < y && y < (pos.y + length + 1)){
 //            NSLog(@"hit score");
             isHitted = TRUE;
             return TRUE;
@@ -49,16 +51,19 @@
 
 
 -(BOOL)catchJudge:(int)x:(int)w{
-    if(isHitted){
-        pos.y += velocity;
-    }
+    //NSLog(@"isCatched Judge, %f", pos.y);
+    pos.y += velocity;
     
-    if(pos.y > 399 && pos.y <410){
+    
+    if(pos.y > 399 && pos.y <411){
         if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){
 //            NSLog(@"catch");
             isCatched = TRUE;
             return TRUE;
         }
+    }
+    if(pos.y > 410){
+        isMissed = TRUE;
     }
     
     return FALSE;
