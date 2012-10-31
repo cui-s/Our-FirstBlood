@@ -1,4 +1,0 @@
-Our-FirstBlood
-==============
-
-FirstBlood

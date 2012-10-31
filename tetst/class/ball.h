@@ -1,5 +1,5 @@
 //
-//  ball.h
+//  Ball.h
 //  dt2
 //
 //  Created by zhao-y on 2012/10/29.
@@ -7,22 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "MyPoint.h"
+#include "MyRect.h"
 
-@interface ball : NSObject{
-    int x;
-    int y;
+@interface Ball : MyRect{
     float vectorx;
     float vectory;
     float velocity;
 }
-- (void)move:(int)x:(int)y:(int)w;
+- (void)move:(int)x:(int)y:(int)w:(int)v;
 
-@property (readwrite, nonatomic) int x;
-@property (readwrite,nonatomic) int y;
 @property (nonatomic) float vectorx;
 @property (nonatomic) float vectory;
 @property (nonatomic) float velocity;
-
 
 
 @end
