@@ -15,7 +15,12 @@
     GLfloat maeniNoBarPosition;
     GLfloat sakiNoBarPosition;
 }
+- (IBAction)changeSize:(id)sender;
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *reg_z;
+@property (weak, nonatomic) IBOutlet UIImageView *imageStick;
+
+
+- (IBAction)changeSize:(id)sender;
 
 @end
