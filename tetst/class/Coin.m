@@ -14,8 +14,9 @@
     
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        length = 10;
-        width = 10;
+        length = 15;
+        width = 15;
+        isHitted = FALSE;
     }
     return self;
 }
@@ -26,9 +27,15 @@
     if(pos.x < x && x < (pos.x + width)){
         if(pos.y < y && y < (pos.y + length)){
             NSLog(@"hit score");
+            isHitted = TRUE;
             return TRUE;
         }
     }
+    
+    if(isHitted){
+        pos.y += 2.0;
+    }
+    
     return FALSE;
 }
 @end

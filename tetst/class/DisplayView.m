@@ -43,8 +43,16 @@
         self.wallRight.pos.y = 0;
         
         self.coinTest = [[Coin alloc]init];
-        self.coinTest.pos.x = self.length/2;
-        self.coinTest.pos.y = self.width/2;
+        self.coinTest.pos.x = self.width/3.7;
+        self.coinTest.pos.y = self.length/3;
+        
+        self.coinTest2 = [[Coin alloc]init];
+        self.coinTest2.pos.x = self.width/2.9;
+        self.coinTest2.pos.y = self.length/2.4;
+        
+        self.coinTest3 = [[Coin alloc]init];
+        self.coinTest3.pos.x = self.width/4 * 3.3;
+        self.coinTest3.pos.y = self.length/4;
         
     }
     return self;
@@ -79,6 +87,8 @@
         CGContextAddPath(context, [self.wallTop generatePath]);
         CGContextAddPath(context, [self.wallRight generatePath]);
         CGContextAddPath(context, [self.coinTest generatePath]);
+        CGContextAddPath(context, [self.coinTest2 generatePath]);
+        CGContextAddPath(context, [self.coinTest3 generatePath]);
         CGContextAddPath(context, [self.bao generatePath]);
     CGContextClosePath(context);
   
@@ -92,6 +102,8 @@
 -(void)okonau:(int)x:(int)y:(int)w:(int)v{
     [self.bao move:x:y:w:v];
     [self.coinTest hitJudge:self.bao.pos.x:self.bao.pos.y];
+    [self.coinTest2 hitJudge:self.bao.pos.x:self.bao.pos.y];
+    [self.coinTest3 hitJudge:self.bao.pos.x:self.bao.pos.y];
     
     CGRect refreshRect;
     refreshRect.origin.x = 20;

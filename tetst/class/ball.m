@@ -10,13 +10,15 @@
 
 @implementation Ball
 @synthesize velocity;
+@synthesize maxSpeed;
 
 - (id)init
 {
    
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        velocity = 10;
+        velocity = 2.0;
+        maxSpeed = 5.0;
         vectorx = velocity;
         vectory = velocity;
         length = 5;
@@ -33,7 +35,6 @@
     
     self.pos.x+= vectorx;
     self.pos.y += vectory;
-    self.pos.y += 1.0;
     
     if(gameOverFlag == 1){
         
@@ -95,9 +96,17 @@
 //        }
     
         if(self.pos.y > 410){
+            
             NSLog(@"GameOver, %d, %d, xmax:%d", self.pos.x, self.pos.y, x + w/2 +1);
             gameOverFlag = 1;
         }
+    }
+    self.pos.y += 1.0;
+    if(vectorx > maxSpeed){
+        vectorx = 5.0;
+    }
+    if(vectory > maxSpeed){
+        vectory = 5.0;
     }
 }
 

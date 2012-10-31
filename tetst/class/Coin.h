@@ -10,7 +10,9 @@
 #import "MyRect.h"
 
 
-@interface Coin : MyRect
+@interface Coin : MyRect{
+    bool isHitted;
+}
 
 -(BOOL)hitJudge:(int)x:(int)y;
 @end
