@@ -11,8 +11,13 @@
 
 
 @interface Coin : MyRect{
-    bool isHitted;
+    BOOL isHitted;
+    BOOL isCatched;
 }
 
 -(BOOL)hitJudge:(int)x:(int)y;
+-(BOOL)catchJudge:(int)x:(int)w;
+
+@property (nonatomic) BOOL isHitted;
+@property (nonatomic) BOOL isCatched;
 @end

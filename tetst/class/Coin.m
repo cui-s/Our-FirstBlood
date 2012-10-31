@@ -9,6 +9,10 @@
 #import "Coin.h"
 
 @implementation Coin
+
+@synthesize isHitted;
+@synthesize isCatched;
+
 - (id)init
 {
     
@@ -17,6 +21,7 @@
         length = 15;
         width = 15;
         isHitted = FALSE;
+        isCatched = FALSE;
     }
     return self;
 }
@@ -32,8 +37,21 @@
         }
     }
     
+    return FALSE;
+}
+
+
+-(BOOL)catchJudge:(int)x:(int)w{
     if(isHitted){
-        pos.y += 2.0;
+        pos.y += 1.0;
+    }
+    
+    if(pos.y > 399 && pos.y <410){
+        if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){
+            NSLog(@"catch");
+            isCatched = TRUE;
+            return TRUE;
+        }
     }
     
     return FALSE;

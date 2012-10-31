@@ -101,9 +101,25 @@
 
 -(void)okonau:(int)x:(int)y:(int)w:(int)v{
     [self.bao move:x:y:w:v];
-    [self.coinTest hitJudge:self.bao.pos.x:self.bao.pos.y];
-    [self.coinTest2 hitJudge:self.bao.pos.x:self.bao.pos.y];
-    [self.coinTest3 hitJudge:self.bao.pos.x:self.bao.pos.y];
+    
+    if([self.coinTest isHitted] == FALSE){        
+        [self.coinTest hitJudge:self.bao.pos.x:self.bao.pos.y];
+    } else {
+        if([self.coinTest catchJudge:x:w]){
+        }
+    }
+    
+    if([self.coinTest2 isHitted] == FALSE){
+        [self.coinTest2 hitJudge:self.bao.pos.x:self.bao.pos.y];
+    } else {
+        [self.coinTest2 catchJudge:x:w];
+    }
+    
+    if([self.coinTest3 isHitted] == FALSE){
+        [self.coinTest3 hitJudge:self.bao.pos.x:self.bao.pos.y];
+    } else {
+        [self.coinTest3 catchJudge:x:w];
+    }
     
     CGRect refreshRect;
     refreshRect.origin.x = 20;
