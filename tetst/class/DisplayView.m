@@ -103,17 +103,11 @@
     }
     
     //　上のWALL　描く
-    CGContextSetRGBFillColor(context,1.0, 1.0, 0.0, 1.0);
-    CGContextAddPath(context, [self.wallTop generatePath]);
-    CGContextFillPath(context);
-    
+    CGContextSetRGBFillColor(context,0.3, 0.59, 0.11, 1.0);
+    CGContextAddPath(context, [self.wallTop generatePath]);    
     //　左のWALL　描く
-    CGContextSetRGBFillColor(context,1.0, 1.0, 0.0, 1.0);
     CGContextAddPath(context, [self.wallLeft generatePath]);
-    CGContextFillPath(context);
-    
     // 右のWALL 描く
-    CGContextSetRGBFillColor(context,1.0, 1.0, 0.0, 1.0);
     CGContextAddPath(context, [self.wallRight generatePath]);
     CGContextFillPath(context);
     
@@ -125,8 +119,8 @@
     CGContextFillPath(context);
     
     NSString *text = [[NSString alloc]initWithFormat:@"%d", self.gameScore];
-    UIFont *font = [UIFont systemFontOfSize:20];
-    [text drawAtPoint:CGPointMake(30, 380) forWidth:60 withFont:font
+    UIFont *font = [UIFont fontWithName:@"Georgia" size:20];
+    [text drawAtPoint:CGPointMake(30, 370) forWidth:60 withFont:font
           minFontSize:8 actualFontSize:NULL
         lineBreakMode:UILineBreakModeTailTruncation
    baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
