@@ -48,7 +48,7 @@
         
        
         
-        self.coinNum = 1000;
+        self.coinNum = 2500;
         
         // initial coins
         self.coins = [[NSMutableArray alloc]init];

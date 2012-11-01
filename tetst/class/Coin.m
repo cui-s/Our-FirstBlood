@@ -62,7 +62,7 @@
 -(BOOL)catchJudge:(int)x:(int)w{
     //NSLog(@"isCatched Judge, %f", pos.y);
     pos.y += velocity;
-    self.opacity *= 0.98;
+    self.opacity *= 0.975;
     
     if(pos.y > 399 && pos.y <411){
         if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){
