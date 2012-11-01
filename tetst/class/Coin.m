@@ -37,6 +37,8 @@
         self.myColor.b = arc4random()%256/256.0;
         
         
+        self.myScore = 100 / velocity;
+        
         isHitted = FALSE;
         isCatched = FALSE;
         isMissed = FALSE;

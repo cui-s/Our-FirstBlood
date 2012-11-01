@@ -19,6 +19,7 @@
     float velocity;
     Color* myColor;
     float opacity;
+    int myScore;
 }
 
 -(BOOL)hitJudge:(int)x:(int)y;
@@ -29,5 +30,6 @@
 @property (atomic) BOOL isMissed;
 @property (nonatomic) float velocity;
 @property (nonatomic) float opacity;
+@property (nonatomic) int myScore;
 @property (nonatomic) Color* myColor;
 @end

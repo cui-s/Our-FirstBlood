@@ -57,6 +57,8 @@
             [self.coins addObject:coinTest];
         }
         
+        self.gameScore = 0;
+        
     }
     return self;
 }
@@ -116,12 +118,18 @@
     CGContextFillPath(context);
     
     
-    UIColor *test = [[UIColor alloc]init];
     
     // BALL　描く
     CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 1.0);
     CGContextAddPath(context, [self.bao generatePath]);
     CGContextFillPath(context);
+    
+    NSString *text = [[NSString alloc]initWithFormat:@"%d", self.gameScore];
+    UIFont *font = [UIFont systemFontOfSize:20];
+    [text drawAtPoint:CGPointMake(30, 380) forWidth:60 withFont:font
+          minFontSize:8 actualFontSize:NULL
+        lineBreakMode:UILineBreakModeTailTruncation
+   baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
 
 }
 
@@ -131,9 +139,13 @@
     
     for(Coin* onecoin in self.coins){
         if([onecoin isHitted] == FALSE){
-            [onecoin hitJudge:self.bao.pos.x:self.bao.pos.y];
+            if([onecoin hitJudge:self.bao.pos.x:self.bao.pos.y] == TRUE){
+                self.gameScore += onecoin.myScore;
+            };
         } else {
             if([onecoin catchJudge:x:w]){
+                self.gameScore += onecoin.myScore;
+              //  NSLog(@"%d", self.gameScore);
             }
         }
     }

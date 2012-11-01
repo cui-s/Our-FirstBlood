@@ -17,6 +17,7 @@
 @property (nonatomic) int width;
 @property (nonatomic) int granularity;
 @property (nonatomic) int coinNum;
+@property (nonatomic) NSInteger gameScore;
 
 @property (nonatomic) Ball* bao;
 @property (nonatomic) Wall* wallLeft;

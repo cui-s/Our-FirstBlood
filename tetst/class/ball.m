@@ -48,34 +48,34 @@
             pos.x = arc4random()%280 +20;
             pos.y = arc4random()%100 +20;
             vectory= velocity;
-            vectorx = (arc4random()%2 - 1 ) * velocity;
+            vectorx = (arc4random()%2 - 1.0 ) * velocity;
             gameOverFlag = 0;
         }
         
     }else if(gameOverFlag == 0) {
         
-        if(self.pos.x < 20){
+        if(self.pos.x < 20.0){
         
-            if(vectorx < 0) {
+            if(vectorx < 0.0) {
                 vectorx = vectorx * -1.0;
             }
         }
     
-        if(self.pos.x > 300){
-            if(vectorx > 0) {
+        if(self.pos.x > 300.0){
+            if(vectorx > 0.0) {
                 vectorx  = vectorx * -1.0;
             }
         }
 
     
-        if(self.pos.y < 20){
-            if(vectory < 0) {
+        if(self.pos.y < 20.0){
+            if(vectory < 0.0) {
                 vectory = vectory * -1.0 ;
             }
         }
     
-        if(self.pos.y < 411 && self.pos.y > 399 && self.pos.x < (x + w/2 +1)  && self.pos.x > (x - w/2 -1)){
-            if(vectory > 0) {
+        if(self.pos.y < 411.0 && self.pos.y > 399.0 && self.pos.x < (x + w/2.0 +1.0)  && self.pos.x > (x - w/2.0 -1.0)){
+            if(vectory > 0.0) {
 //            NSLog(@"*1%d, %d, %d, %d, %f", (x + w/2),(x - w/2), self.pos.x, self.pos.y, vectory);
             vectory  = vectory * -1.0;
             vectory  = vectory * 1.3;
