@@ -18,11 +18,11 @@
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
         velocity = 2.75;
-        maxSpeed = 7.3;
+        maxSpeed = 7.0;
         vectorx = velocity;
         vectory = velocity;
-        length = 5;
-        width = 5;
+        length = 6;
+        width = 6;
         pos.x = arc4random()%280 +20;
         pos.y = arc4random()%100 +20;
     }
@@ -66,8 +66,7 @@
                 vectorx  = vectorx * -1.0;
             }
         }
-    
-    
+
     
         if(self.pos.y < 20){
             if(vectory < 0) {
@@ -92,7 +91,7 @@
             }
         }
     
-        if(x/y > 1.3 || (x - y) > 2){
+        if(x/y > 1.3 || (x - y) > 2.1){
             y = x * 0.95;
         }
         
@@ -111,10 +110,10 @@
     self.pos.y += 0.67;
     
     if(vectorx > maxSpeed){
-        vectorx = 5.0;
+        vectorx = maxSpeed;
     }
     if(vectory > maxSpeed){
-        vectory = 5.0;
+        vectory = maxSpeed;
     }
 }
 

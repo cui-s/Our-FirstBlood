@@ -25,7 +25,16 @@
         pos.x = arc4random()%254 + 22;
         pos.y = arc4random()%300 + 20;
         velocity = arc4random()%30/10.0 + 0.7;
+        self.opacity = 1.0;
 //        NSLog(@"%f", velocity);
+        
+        self.myColor = [[Color alloc]init];
+        
+        
+        
+        self.myColor.r = arc4random()%256/256.0;
+        self.myColor.g = arc4random()%256/256.0;
+        self.myColor.b = arc4random()%256/256.0;
         
         
         isHitted = FALSE;
@@ -53,7 +62,7 @@
 -(BOOL)catchJudge:(int)x:(int)w{
     //NSLog(@"isCatched Judge, %f", pos.y);
     pos.y += velocity;
-    
+    self.opacity *= 0.98;
     
     if(pos.y > 399 && pos.y <411){
         if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){

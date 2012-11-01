@@ -46,8 +46,9 @@
         self.wallRight.pos.x = self.width - self.granularity;
         self.wallRight.pos.y = 0;
         
+       
         
-        self.coinNum = 5000;
+        self.coinNum = 1000;
         
         // initial coins
         self.coins = [[NSMutableArray alloc]init];
@@ -92,14 +93,12 @@
 //    CGContextClosePath(context);
   
 
-  // Coins 描く
-    CGContextSetRGBFillColor(context,1.0, 1.0, 1.0, 0.7);  
+    // Coins 描く
     for(Coin* onecoin in self.coins){
+        CGContextSetRGBFillColor(context,onecoin.myColor.r, onecoin.myColor.g, onecoin.myColor.b, onecoin.opacity);
         CGContextAddPath(context, [onecoin generatePath]);
+        CGContextFillPath(context);
     }
-
-    CGContextFillPath(context);
-    
     
     //　上のWALL　描く
     CGContextSetRGBFillColor(context,1.0, 1.0, 0.0, 1.0);
@@ -116,8 +115,11 @@
     CGContextAddPath(context, [self.wallRight generatePath]);
     CGContextFillPath(context);
     
+    
+    UIColor *test = [[UIColor alloc]init];
+    
     // BALL　描く
-    CGContextSetRGBFillColor(context, 0.0,0.0, 1.0, 1.0);
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 1.0);
     CGContextAddPath(context, [self.bao generatePath]);
     CGContextFillPath(context);
 

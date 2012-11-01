@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "MyRect.h"
 
+#include "Color.h"
+
 
 @interface Coin : MyRect{
     BOOL isHitted;
     BOOL isCatched;
     BOOL isMissed;
     float velocity;
+    Color* myColor;
+    float opacity;
 }
 
 -(BOOL)hitJudge:(int)x:(int)y;
@@ -24,4 +28,6 @@
 @property (atomic) BOOL isCatched;
 @property (atomic) BOOL isMissed;
 @property (nonatomic) float velocity;
+@property (nonatomic) float opacity;
+@property (nonatomic) Color* myColor;
 @end
