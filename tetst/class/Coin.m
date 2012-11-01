@@ -22,7 +22,7 @@
         
         length = arc4random()%10 + 10;
         width = arc4random()%10 + 10;
-        pos.x = arc4random()%280 + 20;
+        pos.x = arc4random()%254 + 22;
         pos.y = arc4random()%300 + 20;
         velocity = arc4random()%30/10.0 + 0.7;
 //        NSLog(@"%f", velocity);

@@ -17,27 +17,28 @@
    
     if(self == [super init]){
         pos = [[MyPoint alloc]init];
-        velocity = 2.5;
-        maxSpeed = 7.0;
+        velocity = 2.75;
+        maxSpeed = 7.3;
         vectorx = velocity;
         vectory = velocity;
         length = 5;
         width = 5;
+        pos.x = arc4random()%280 +20;
+        pos.y = arc4random()%100 +20;
     }
     return self;
 }
 
-
+//ボール　運動関数
 - (void)move:(int)x:(int)y:(int)w:(int)v;
 {
     static int gameOverFlag = 0;
     
     if(fabs(vectorx) < 0.001){
-        vectorx = 1.0
-        ;
+        vectorx = 1.0;
     }
     
-    self.pos.x+= vectorx;
+    self.pos.x += vectorx;
     self.pos.y += vectory;
     
     if(gameOverFlag == 1){
