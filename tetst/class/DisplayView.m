@@ -101,8 +101,8 @@
 //    CGContextClosePath(context);
    
     
-    UIImage *image =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"file://localhost/Users/background.jpeg"]]];
     
+    UIImage *image =[UIImage  imageNamed:@"background.jpg"];
     CGContextDrawImage((CGContextRef)context, refreshRect, ((UIImage*)image).CGImage);
 
     
