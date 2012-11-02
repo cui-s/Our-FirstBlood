@@ -33,8 +33,9 @@
 }
 
 //ボール　運動関数
-- (void)move:(float)x:(float)y:(float)w:(float)v;
+- (BOOL)move:(float)x:(float)y:(float)w:(float)v;
 {
+    BOOL returnFlag = TRUE;
     static int gameOverFlag = 0;
     
     if(fabs(vectorx) < 0.001){
@@ -99,6 +100,7 @@
             
 //            NSLog(@"GameOver, %d, %d, xmax:%d", self.pos.x, self.pos.y, x + w/2 +1);
             gameOverFlag = 1;
+            returnFlag = FALSE;
         }
     }
     
@@ -111,6 +113,8 @@
     if(vectory > maxSpeed){
         vectory = maxSpeed;
     }
+    
+    return returnFlag;
 }
 
 

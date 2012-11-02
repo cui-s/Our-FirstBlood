@@ -16,7 +16,7 @@
     float velocity;
     float maxSpeed;
 }
-- (void)move:(float)x:(float)y:(float)w:(float)v;
+- (BOOL)move:(float)x:(float)y:(float)w:(float)v;
 
 
 @property (nonatomic) float vectorx;

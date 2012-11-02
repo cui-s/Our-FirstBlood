@@ -171,7 +171,9 @@
 }
 
 -(void)okonau:(float)x:(float)y:(float)w:(float)v{
-    [self.bao move:x:y:w:v];
+    if([self.bao move:x:y:w:v] == FALSE){
+        self.gameTime /= 2;
+    };
     BOOL addSingal = FALSE;
     
     for(Coin* onecoin in self.coins){
