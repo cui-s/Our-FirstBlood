@@ -11,6 +11,7 @@
 @implementation DisplayView
 
 @synthesize gameTime;
+@synthesize gameStatus;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,6 +19,8 @@
     if (self) {
         // Initialization code
 
+        self.gameStatus = GAMESTART;
+        
         self.granularity = 20;
         
         self.width = frame.size.width;
@@ -60,6 +63,7 @@
         }
         
         self.gameScore = 0;
+        self.gameTime = 30.0 * 1.0 / 0.017;
         
     }
     return self;
@@ -97,12 +101,6 @@
 //    CGContextClosePath(context);
   
 
-    // Coins 描く
-    for(Coin* onecoin in self.coins){
-        CGContextSetRGBFillColor(context,onecoin.myColor.r, onecoin.myColor.g, onecoin.myColor.b, onecoin.opacity);
-        CGContextAddPath(context, [onecoin generatePath]);
-        CGContextFillPath(context);
-    }
     
     //　上のWALL　描く
     CGContextSetRGBFillColor(context,0.3, 0.59, 0.11, 1.0);
@@ -113,6 +111,28 @@
     CGContextAddPath(context, [self.wallRight generatePath]);
     CGContextFillPath(context);
     
+    if(self.gameStatus == GAMEOVER){
+        NSString *text = [[NSString alloc]initWithFormat:@"GAME OVER"];
+        UIFont *font = [UIFont fontWithName:@"Georgia" size:20];
+        [text drawAtPoint:CGPointMake(100, 100) forWidth:1000 withFont:font
+              minFontSize:30 actualFontSize:NULL
+            lineBreakMode:UILineBreakModeTailTruncation
+       baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+        
+        text = [[NSString alloc]initWithFormat:@"Score:%d", self.gameScore];
+        [text drawAtPoint:CGPointMake(100, 170) forWidth:1000 withFont:font
+              minFontSize:30 actualFontSize:NULL
+            lineBreakMode:UILineBreakModeTailTruncation
+       baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+        return;
+    }
+    
+    // Coins 描く
+    for(Coin* onecoin in self.coins){
+        CGContextSetRGBFillColor(context,onecoin.myColor.r, onecoin.myColor.g, onecoin.myColor.b, onecoin.opacity);
+        CGContextAddPath(context, [onecoin generatePath]);
+        CGContextFillPath(context);
+    }
     
     
     // BALL　描く
@@ -123,6 +143,17 @@
     NSString *text = [[NSString alloc]initWithFormat:@"%d", self.gameScore];
     UIFont *font = [UIFont fontWithName:@"Georgia" size:20];
     [text drawAtPoint:CGPointMake(30, 370) forWidth:60 withFont:font
+          minFontSize:8 actualFontSize:NULL
+        lineBreakMode:UILineBreakModeTailTruncation
+   baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+    
+    
+    //change game time to second単位
+    int tmp = self.gameTime * 0.017;
+    
+    NSString *text2 = [[NSString alloc]initWithFormat:@"%d", tmp];
+    UIFont *font2 = [UIFont fontWithName:@"Georgia" size:20];
+    [text2 drawAtPoint:CGPointMake(260, 370) forWidth:60 withFont:font
           minFontSize:8 actualFontSize:NULL
         lineBreakMode:UILineBreakModeTailTruncation
    baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
@@ -137,11 +168,12 @@
         if([onecoin isHitted] == FALSE){
             if([onecoin hitJudge:self.bao.pos.x:self.bao.pos.y] == TRUE){
                 self.gameScore += onecoin.myScore;
+                self.gameTime += onecoin.myTime;
             };
         } else {
             if([onecoin catchJudge:x:w]){
                 self.gameScore += onecoin.myScore;
-              //  NSLog(@"%d", self.gameScore);
+                self.gameTime += onecoin.myTime;
             }
         }
     }
@@ -174,6 +206,14 @@
     
     //　Refreshする
     [self setNeedsDisplayInRect:refreshRect];
+    
+    
+    
+    self.gameTime -= 1;
+    
+    if(self.gameTime < 0){
+        self.gameStatus = GAMEOVER;
+    }
 }
 
 -(void)addCoins:(int)num{
@@ -181,6 +221,39 @@
         Coin *coinTest = [[Coin alloc]init];
             [self.coins addObject:coinTest];
     }
+}
+
+
+-(void)owari{    //  部分　refresh 区域
+   
+    CGRect refreshRect;
+    refreshRect.origin.x = 20;
+    refreshRect.origin.y = 20;
+    refreshRect.size.height = 380;
+    refreshRect.size.width = 280;
+    
+    //　Refreshする
+    [self setNeedsDisplayInRect:refreshRect];
+}
+
+-(void)restart{
+    // Initialization code
+    
+    self.gameStatus = GAMESTART;
+    
+    
+    self.coinNum = 10;
+    
+    // initial coins
+    self.coins = [[NSMutableArray alloc]init];
+    for(int i = 0; i< self.coinNum; i++){
+        Coin *coinTest = [[Coin alloc]init];
+        [self.coins addObject:coinTest];
+    }
+    
+    self.gameScore = 0;
+    self.gameTime = 30.0 * 1.0 / 0.017;
+
 }
 
 @end

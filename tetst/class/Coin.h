@@ -27,6 +27,7 @@ static const int S_COIN = 3;
     float opacity;
     int myScore;
     int kind;
+    float myTime;
 }
 
 -(BOOL)hitJudge:(float)x:(float)y;
@@ -40,5 +41,6 @@ static const int S_COIN = 3;
 @property (nonatomic) float opacity;
 @property (nonatomic) int myScore;
 @property (nonatomic) int kind;
+@property (nonatomic) float myTime;
 @property (nonatomic) Color* myColor;
 @end

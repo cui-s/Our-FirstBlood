@@ -120,10 +120,20 @@
 //    NSLog(@"%3.1f", tmp*100 );
     
     //dual
-    [av okonau:self.reg_z.view.center.x
+    
+    if(av.gameStatus == GAMEOVER){
+        if(tmp * 100 > 1500){
+            NSLog(@"gogogo");
+            [av restart];
+        }
+        [av owari];
+    } else {
+    
+        [av okonau:self.reg_z.view.center.x
               :self.reg_z.view.center.y
               :self.reg_z.view.bounds.size.width
               :tmp*100.0];
+    }
     
 }
 

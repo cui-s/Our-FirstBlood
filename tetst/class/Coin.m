@@ -20,7 +20,7 @@
 @synthesize opacity;
 @synthesize velocity;
 @synthesize myColor;
-
+@synthesize myTime;
 
 
 - (id)init
@@ -56,6 +56,7 @@
             self.myColor.g = 0.3;
             self.myColor.b = 0.5;
             self.myScore = 10;
+            self.myTime = 1.0 / 0.017;
         }
         if(self.kind == DROPABLE_COIN){
             length = 9;
@@ -66,6 +67,7 @@
             self.myColor.g = 0.7;
             self.myColor.b = 0.5;
             self.myScore = 20;
+            self.myTime = 2.0 / 0.017;
         }
     }
     return self;
