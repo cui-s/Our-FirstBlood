@@ -43,8 +43,10 @@
         
         if(tmpForKindDecided < 70){
             self.kind = NORMAL_COIN;
-        } else {
+        } else if(tmpForKindDecided <90){
             self.kind = DROPABLE_COIN;
+        } else {
+            self.kind = S_COIN;
         }
         
         if(self.kind == NORMAL_COIN){
@@ -57,8 +59,7 @@
             self.myColor.b = 0.5;
             self.myScore = 10;
             self.myTime = 1.0 / 0.017;
-        }
-        if(self.kind == DROPABLE_COIN){
+        }else if(self.kind == DROPABLE_COIN){
             length = 9;
             width = 9;
             velocity = 3;
@@ -68,6 +69,16 @@
             self.myColor.b = 0.5;
             self.myScore = 20;
             self.myTime = 2.0 / 0.017;
+        }else{//S_COIN
+            length = 9;
+            width = 9;
+            velocity = 3;
+            self.opacity = 1.0;
+            self.myColor.r = 1.0;
+            self.myColor.g = 0.6;
+            self.myColor.b = 0.5;
+            self.myScore = 20;
+            self.myTime = 2.0 / 0.017;            
         }
     }
     return self;
@@ -91,7 +102,7 @@
 -(BOOL)catchJudge:(float)x:(float)w{
     //NSLog(@"isCatched Judge, %f", pos.y);
     pos.y += velocity;
-    if(self.kind == NORMAL_COIN){
+    if(self.kind == NORMAL_COIN || self.kind == S_COIN){
         if(self.opacity < 0.4){
             self.isNormalCoinAndIsEnd = TRUE;
         }
