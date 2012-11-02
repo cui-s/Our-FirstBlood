@@ -55,51 +55,50 @@
     [recongizer setTranslation:CGPointMake(0, 0) inView:self.view];
     
     if (recongizer.state == UIGestureRecognizerStateEnded) {
-//        
-//        
-//        
-//        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
-//        
-//        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
-//        
-//        CGFloat slideMult = magnitude / 280;
-//        
-////        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
-//        
-//        
-//        
-//        float slideFactor = 0.1 * slideMult; // Increase for more of a slide
-//        
-//        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
-//                                         
-//                                         recongizer.view.center.y );
-//        
-//        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
-//        
-//        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
-//        
-//        
-//        
-//        [UIView animateWithDuration:slideFactor*2 delay:0
-//         
-//                            options:UIViewAnimationOptionCurveEaseOut animations:^{
-//                                
-//                                recongizer.view.center = finalPoint;
-//                                
-//                            } completion:nil];
-//        
-//        
+        
+        
+        
+        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
+        
+        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
+        
+        CGFloat slideMult = magnitude / 1000;
+        
+//        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
+        
+        
+        
+        float slideFactor = 0.2 * slideMult; // Increase for more of a slide
+        
+        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
+                                         
+                                         recongizer.view.center.y );
+        
+        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
+        
+        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
+        
+        
+        
+        [UIView animateWithDuration:slideFactor*1 delay:0
+         
+                            options:UIViewAnimationOptionCurveEaseOut animations:^{
+                                
+                                recongizer.view.center = finalPoint;
+                                
+                            } completion:nil];
+        
+        
         
     }
     
-    if(recongizer.self.view.center.x>=280)
+    if(recongizer.self.view.center.x>=300-self.imageStick.bounds.size.width/2)
         
-        recongizer.view.center = CGPointMake(280,recongizer.view.center.y);
+        recongizer.view.center = CGPointMake(300-self.imageStick.bounds.size.width/2,recongizer.view.center.y);
     
-    if(recongizer.self.view.center.x<=40)
+    if(recongizer.self.view.center.x<=20+self.imageStick.bounds.size.width/2)
         
-        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);
-    
+        recongizer.view.center = CGPointMake(20+self.imageStick.bounds.size.width/2,recongizer.view.center.y);
 }
 
 

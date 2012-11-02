@@ -99,17 +99,31 @@
 //            CGContextAddPath(context, [onecoin generatePath]);
 //        }
 //    CGContextClosePath(context);
-  
+   
+    
+    UIImage *image =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"file://localhost/Users/lods_img01.jpeg"]]];
+    
+    CGContextDrawImage((CGContextRef)context, refreshRect, ((UIImage*)image).CGImage);
 
     
     //　上のWALL　描く
     CGContextSetRGBFillColor(context,0.3, 0.59, 0.11, 1.0);
-    CGContextAddPath(context, [self.wallTop generatePath]);    
+    CGContextSetGrayFillColor(context, 0.5, 0.8);
+    CGContextAddPath(context, [self.wallTop generatePath]);
+    CGContextFillPath(context);
+    //CGContextSetAlaha();
+    
     //　左のWALL　描く
+    CGContextSetGrayFillColor(context, 0.5, 0.8);
     CGContextAddPath(context, [self.wallLeft generatePath]);
+    CGContextFillPath(context);
+    
     // 右のWALL 描く
+    CGContextSetGrayFillColor(context, 0.5, 0.8);
     CGContextAddPath(context, [self.wallRight generatePath]);
     CGContextFillPath(context);
+    
+
     
     if(self.gameStatus == GAMEOVER){
         NSString *text = [[NSString alloc]initWithFormat:@"GAME OVER"];
