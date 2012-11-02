@@ -21,4 +21,6 @@
 
 - (CGMutablePathRef)generatePath;
 
+- (CGRect)generateRect;
+
 @end

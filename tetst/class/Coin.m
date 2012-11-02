@@ -43,7 +43,7 @@
         
         if(tmpForKindDecided < 70){
             self.kind = NORMAL_COIN;
-        } else if(tmpForKindDecided <90){
+        } else if(tmpForKindDecided <96){
             self.kind = DROPABLE_COIN;
         } else {
             self.kind = S_COIN;
@@ -75,8 +75,8 @@
             velocity = 3;
             self.opacity = 1.0;
             self.myColor.r = 1.0;
-            self.myColor.g = 0.6;
-            self.myColor.b = 0.5;
+            self.myColor.g = 0.8;
+            self.myColor.b = 0.0;
             self.myScore = 20;
             self.myTime = 2.0 / 0.017;            
         }
@@ -109,7 +109,6 @@
         self.opacity *= 0.95;
         
     }
-    
     
     if(pos.y > 399 && pos.y <411){
         if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){

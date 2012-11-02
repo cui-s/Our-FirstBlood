@@ -57,39 +57,39 @@
     if (recongizer.state == UIGestureRecognizerStateEnded) {
         
         
-        
-        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
-        
-        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
-        
-        CGFloat slideMult = magnitude / 1000;
-        
-//        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
-        
-        
-        
-        float slideFactor = 0.2 * slideMult; // Increase for more of a slide
-        
-        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
-                                         
-                                         recongizer.view.center.y );
-        
-        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
-        
-        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
-        
-        
-        
-        [UIView animateWithDuration:slideFactor*1 delay:0
-         
-                            options:UIViewAnimationOptionCurveEaseOut animations:^{
-                                
-                                recongizer.view.center = finalPoint;
-                                
-                            } completion:nil];
-        
-        
-        
+//        
+//        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
+//        
+//        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
+//        
+//        CGFloat slideMult = magnitude / 1000;
+//        
+////        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
+//        
+//        
+//        
+//        float slideFactor = 0.2 * slideMult; // Increase for more of a slide
+//        
+//        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
+//                                         
+//                                         recongizer.view.center.y );
+//        
+//        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
+//        
+//        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
+//        
+//        
+//        
+//        [UIView animateWithDuration:slideFactor*1 delay:0
+//         
+//                            options:UIViewAnimationOptionCurveEaseOut animations:^{
+//                                
+//                                recongizer.view.center = finalPoint;
+//                                
+//                            } completion:nil];
+//        
+//        
+//        
     }
     
     if(recongizer.self.view.center.x>=300-self.imageStick.bounds.size.width/2)
@@ -118,11 +118,10 @@
     sakiNoBarPosition = imaNoBarPostion;
 //    NSLog(@"%3.1f", tmp*100 );
     
-    //dual
     
     if(av.gameStatus == GAMEOVER){
         if(tmp * 100 > 1500){
-            NSLog(@"gogogo");
+//            NSLog(@"gogogo");
             [av restart];
         }
         [av owari];

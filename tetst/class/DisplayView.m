@@ -107,21 +107,17 @@
 
     
     //　上のWALL　描く
-    CGContextSetRGBFillColor(context,0.3, 0.59, 0.11, 1.0);
-    CGContextSetGrayFillColor(context, 0.5, 0.8);
-    CGContextAddPath(context, [self.wallTop generatePath]);
-    CGContextFillPath(context);
+    UIImage *image1 =[UIImage  imageNamed:@"topWall.jpg"];    
+    CGContextDrawImage((CGContextRef)context, [self.wallTop generateRect], ((UIImage*)image1).CGImage);
     //CGContextSetAlaha();
     
     //　左のWALL　描く
-    CGContextSetGrayFillColor(context, 0.5, 0.8);
-    CGContextAddPath(context, [self.wallLeft generatePath]);
-    CGContextFillPath(context);
+    UIImage *image2 =[UIImage  imageNamed:@"leftWall.jpg"];
+    CGContextDrawImage((CGContextRef)context, [self.wallLeft generateRect], ((UIImage*)image2).CGImage);
     
     // 右のWALL 描く
-    CGContextSetGrayFillColor(context, 0.5, 0.8);
-    CGContextAddPath(context, [self.wallRight generatePath]);
-    CGContextFillPath(context);
+    UIImage *image3 =[UIImage  imageNamed:@"rightWall.jpg"];
+    CGContextDrawImage((CGContextRef)context, [self.wallRight generateRect], ((UIImage*)image3).CGImage);
     
 
     
@@ -176,13 +172,16 @@
 
 -(void)okonau:(float)x:(float)y:(float)w:(float)v{
     [self.bao move:x:y:w:v];
-    
+    BOOL addSingal = FALSE;
     
     for(Coin* onecoin in self.coins){
         if([onecoin isHitted] == FALSE){
             if([onecoin hitJudge:self.bao.pos.x:self.bao.pos.y] == TRUE){
                 self.gameScore += onecoin.myScore;
                 self.gameTime += onecoin.myTime;
+                if(onecoin.kind == S_COIN){//hit S_COIN
+                    addSingal = TRUE;
+                }
             };
         } else {
             if([onecoin catchJudge:x:w]){
@@ -190,6 +189,10 @@
                 self.gameTime += onecoin.myTime;
             }
         }
+    }
+    
+    if(addSingal == TRUE){//if hit S_COIN, add coins
+        [self addCoins:30];
     }
     
     // NSMutableArray　削除の為
@@ -257,6 +260,8 @@
     
     
     self.coinNum = 10;
+    
+    self.bao = [[Ball alloc] init];
     
     // initial coins
     self.coins = [[NSMutableArray alloc]init];

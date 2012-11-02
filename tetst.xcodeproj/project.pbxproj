@@ -25,6 +25,9 @@
 		3F69FC25163E728C0053F7EA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F69FC23163E728C0053F7EA /* MainStoryboard.storyboard */; };
 		3F69FC28163E728C0053F7EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F69FC27163E728C0053F7EA /* ViewController.m */; };
 		3F69FC37163E77900053F7EA /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F69FC36163E77900053F7EA /* 3.jpg */; };
+		3F6DCF6616439009000317CB /* topWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF6316439009000317CB /* topWall.jpg */; };
+		3F6DCF6716439009000317CB /* rightWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF6416439009000317CB /* rightWall.jpg */; };
+		3F6DCF6816439009000317CB /* leftWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF6516439009000317CB /* leftWall.jpg */; };
 		3F6F1DCE16425946007559E9 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F1DCD16425946007559E9 /* Color.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,9 @@
 		3F69FC26163E728C0053F7EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3F69FC27163E728C0053F7EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F69FC36163E77900053F7EA /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = res/3.jpg; sourceTree = "<group>"; };
+		3F6DCF6316439009000317CB /* topWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = topWall.jpg; path = res/topWall.jpg; sourceTree = "<group>"; };
+		3F6DCF6416439009000317CB /* rightWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rightWall.jpg; path = res/rightWall.jpg; sourceTree = "<group>"; };
+		3F6DCF6516439009000317CB /* leftWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = leftWall.jpg; path = res/leftWall.jpg; sourceTree = "<group>"; };
 		3F6F1DCC16425946007559E9 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Color.h; path = class/basic/Color.h; sourceTree = "<group>"; };
 		3F6F1DCD16425946007559E9 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Color.m; path = class/basic/Color.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +139,9 @@
 		3F69FC12163E728C0053F7EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F6DCF6316439009000317CB /* topWall.jpg */,
+				3F6DCF6416439009000317CB /* rightWall.jpg */,
+				3F6DCF6516439009000317CB /* leftWall.jpg */,
 				3F69FC36163E77900053F7EA /* 3.jpg */,
 				3F69FC13163E728C0053F7EA /* tetst-Info.plist */,
 				3F69FC14163E728C0053F7EA /* InfoPlist.strings */,
@@ -218,6 +227,9 @@
 				3F69FC22163E728C0053F7EA /* Default-568h@2x.png in Resources */,
 				3F69FC25163E728C0053F7EA /* MainStoryboard.storyboard in Resources */,
 				3F69FC37163E77900053F7EA /* 3.jpg in Resources */,
+				3F6DCF6616439009000317CB /* topWall.jpg in Resources */,
+				3F6DCF6716439009000317CB /* rightWall.jpg in Resources */,
+				3F6DCF6816439009000317CB /* leftWall.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
