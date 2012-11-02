@@ -108,7 +108,7 @@
 - (void) handleTimer: (NSTimer *) timer
 {
     //cacluate velocity
-    CGPoint velocity = [self.reg_z velocityInView:self.view];
+//    CGPoint velocity = [self.reg_z velocityInView:self.view];
     
     GLfloat imaNoBarPostion = self.reg_z.view.center.x;
     

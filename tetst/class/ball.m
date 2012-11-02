@@ -11,6 +11,9 @@
 @implementation Ball
 @synthesize velocity;
 @synthesize maxSpeed;
+@synthesize vectorx;
+@synthesize vectory;
+
 
 - (id)init
 {

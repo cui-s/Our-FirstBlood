@@ -10,6 +10,8 @@
 
 @implementation DisplayView
 
+@synthesize gameTime;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -48,7 +50,7 @@
         
        
         
-        self.coinNum = 2500;
+        self.coinNum = 10;
         
         // initial coins
         self.coins = [[NSMutableArray alloc]init];
@@ -149,7 +151,7 @@
     
     // collect gabrage coins
     for(Coin* onecoin in self.coins){
-        if(onecoin.isCatched == true || onecoin.isMissed){
+        if(onecoin.isCatched || onecoin.isMissed || onecoin.isNormalCoinAndIsEnd){
             [forRemove addObject:onecoin];
         }
     }
@@ -158,6 +160,10 @@
     [self.coins removeObjectsInArray:forRemove];
 //    NSLog(@"coins: %d", self.coins.count);
     
+    
+    if(self.coins.count < 5){
+        [self addCoins:3];
+    }
     
     //  部分　refresh 区域
     CGRect refreshRect;
@@ -168,6 +174,13 @@
     
     //　Refreshする
     [self setNeedsDisplayInRect:refreshRect];
+}
+
+-(void)addCoins:(int)num{
+    for(int i = 0; i < num; i++){
+        Coin *coinTest = [[Coin alloc]init];
+            [self.coins addObject:coinTest];
+    }
 }
 
 @end

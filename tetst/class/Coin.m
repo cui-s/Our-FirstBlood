@@ -13,6 +13,8 @@
 @synthesize isHitted;
 @synthesize isCatched;
 @synthesize isMissed;
+@synthesize isNormalCoinAndIsEnd;
+
 @synthesize kind;
 @synthesize myScore;
 @synthesize opacity;
@@ -35,6 +37,7 @@
         isHitted = FALSE;
         isCatched = FALSE;
         isMissed = FALSE;
+        isNormalCoinAndIsEnd = FALSE;
         
         int tmpForKindDecided = arc4random()%100;
         
@@ -86,7 +89,14 @@
 -(BOOL)catchJudge:(float)x:(float)w{
     //NSLog(@"isCatched Judge, %f", pos.y);
     pos.y += velocity;
-    self.opacity *= 0.975;
+    if(self.kind == NORMAL_COIN){
+        if(self.opacity < 0.4){
+            self.isNormalCoinAndIsEnd = TRUE;
+        }
+        self.opacity *= 0.95;
+        
+    }
+    
     
     if(pos.y > 399 && pos.y <411){
         if((pos.x > x - w/2 -1 && pos.x < x + w/2 +1) || (pos.x + width  > x - w/2 -1 && pos.x + width < x + w/2 +1)){

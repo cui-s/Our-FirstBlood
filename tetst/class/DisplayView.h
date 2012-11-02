@@ -18,6 +18,7 @@
 @property (nonatomic) float granularity;
 @property (nonatomic) float coinNum;
 @property (nonatomic) NSInteger gameScore;
+@property (nonatomic) int gameTime;
 
 @property (nonatomic) Ball* bao;
 @property (nonatomic) Wall* wallLeft;
@@ -27,5 +28,6 @@
 @property (nonatomic) NSMutableArray* coins;
 
 -(void)okonau:(float)x:(float)y:(float)w:(float)v;
+-(void)addCoins:(int)num;
 
 @end

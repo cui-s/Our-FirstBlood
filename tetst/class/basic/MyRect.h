@@ -14,7 +14,6 @@
     float length;
     float width;
 }
-- (void)move:(float)x:(float)y:(float)w;
 
 @property (readwrite, nonatomic) MyPoint* pos;
 @property (readwrite, nonatomic) float length;
