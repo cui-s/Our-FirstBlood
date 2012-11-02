@@ -13,10 +13,10 @@
 #import "Coin.h"
 @interface DisplayView : UIView
 
-@property (nonatomic) int length;
-@property (nonatomic) int width;
-@property (nonatomic) int granularity;
-@property (nonatomic) int coinNum;
+@property (nonatomic) float length;
+@property (nonatomic) float width;
+@property (nonatomic) float granularity;
+@property (nonatomic) float coinNum;
 @property (nonatomic) NSInteger gameScore;
 
 @property (nonatomic) Ball* bao;
@@ -26,6 +26,6 @@
 
 @property (nonatomic) NSMutableArray* coins;
 
--(void)okonau:(int)x:(int)y:(int)w:(int)v;
+-(void)okonau:(float)x:(float)y:(float)w:(float)v;
 
 @end

@@ -30,7 +30,7 @@
 }
 
 //ボール　運動関数
-- (void)move:(int)x:(int)y:(int)w:(int)v;
+- (void)move:(float)x:(float)y:(float)w:(float)v;
 {
     static int gameOverFlag = 0;
     
@@ -76,18 +76,11 @@
     
         if(self.pos.y < 411.0 && self.pos.y > 399.0 && self.pos.x < (x + w/2.0 +1.0)  && self.pos.x > (x - w/2.0 -1.0)){
             if(vectory > 0.0) {
-//            NSLog(@"*1%d, %d, %d, %d, %f", (x + w/2),(x - w/2), self.pos.x, self.pos.y, vectory);
-            vectory  = vectory * -1.0;
-            vectory  = vectory * 1.3;
-//            NSLog(@"*2%d, %d, %d, %d, %f", (x + w/2),(x - w/2), self.pos.x, self.pos.y, vectory);
-            if(v != 0) {
-                vectorx *= 1.3;
-                if(v * vectorx < 0){
-                    vectorx *= -1.0;
+                vectory  = vectory * -1.0;
+                vectory  = vectory * 1.3;
+                if(abs(v) > 0.01) {
+                    vectorx = (v / 3500.0) * maxSpeed;
                 }
-            
-//                NSLog(@"hit %f", vectorx);
-            }
             }
         }
     

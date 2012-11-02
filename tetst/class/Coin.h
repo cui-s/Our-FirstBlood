@@ -11,6 +11,11 @@
 
 #include "Color.h"
 
+static const int NORMAL_COIN = 1;
+static const int DROPABLE_COIN = 2;
+static const int S_COIN = 3;
+
+
 
 @interface Coin : MyRect{
     BOOL isHitted;
@@ -20,10 +25,11 @@
     Color* myColor;
     float opacity;
     int myScore;
+    int kind;
 }
 
--(BOOL)hitJudge:(int)x:(int)y;
--(BOOL)catchJudge:(int)x:(int)w;
+-(BOOL)hitJudge:(float)x:(float)y;
+-(BOOL)catchJudge:(float)x:(float)w;
 
 @property (atomic) BOOL isHitted;
 @property (atomic) BOOL isCatched;
@@ -31,5 +37,6 @@
 @property (nonatomic) float velocity;
 @property (nonatomic) float opacity;
 @property (nonatomic) int myScore;
+@property (nonatomic) int kind;
 @property (nonatomic) Color* myColor;
 @end

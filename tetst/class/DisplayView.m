@@ -127,7 +127,7 @@
 
 }
 
--(void)okonau:(int)x:(int)y:(int)w:(int)v{
+-(void)okonau:(float)x:(float)y:(float)w:(float)v{
     [self.bao move:x:y:w:v];
     
     

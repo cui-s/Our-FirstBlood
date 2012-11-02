@@ -13,41 +13,63 @@
 @synthesize isHitted;
 @synthesize isCatched;
 @synthesize isMissed;
+@synthesize kind;
+@synthesize myScore;
+@synthesize opacity;
+@synthesize velocity;
+@synthesize myColor;
+
+
 
 - (id)init
 {
     
     if(self == [super init]){
-        pos = [[MyPoint alloc]init];
         
-        length = arc4random()%10 + 10;
-        width = arc4random()%10 + 10;
+        pos = [[MyPoint alloc]init];
         pos.x = arc4random()%254 + 22;
         pos.y = arc4random()%300 + 20;
-        velocity = arc4random()%30/10.0 + 0.7;
-        self.opacity = 1.0;
-//        NSLog(@"%f", velocity);
         
         self.myColor = [[Color alloc]init];
-        
-        
-        
-        self.myColor.r = arc4random()%256/256.0;
-        self.myColor.g = arc4random()%256/256.0;
-        self.myColor.b = arc4random()%256/256.0;
-        
-        
-        self.myScore = 100 / velocity;
         
         isHitted = FALSE;
         isCatched = FALSE;
         isMissed = FALSE;
+        
+        int tmpForKindDecided = arc4random()%100;
+        
+        if(tmpForKindDecided < 70){
+            self.kind = NORMAL_COIN;
+        } else {
+            self.kind = DROPABLE_COIN;
+        }
+        
+        if(self.kind == NORMAL_COIN){
+            length = 12;
+            width = 12;
+            velocity = 2;
+            self.opacity = 1.0;
+            self.myColor.r = 0.7;
+            self.myColor.g = 0.3;
+            self.myColor.b = 0.5;
+            self.myScore = 10;
+        }
+        if(self.kind == DROPABLE_COIN){
+            length = 9;
+            width = 9;
+            velocity = 3;
+            self.opacity = 1.0;
+            self.myColor.r = 0.2;
+            self.myColor.g = 0.7;
+            self.myColor.b = 0.5;
+            self.myScore = 20;
+        }
     }
     return self;
 }
 
 
--(BOOL)hitJudge:(int)x:(int)y;{
+-(BOOL)hitJudge:(float)x:(float)y;{
     //NSLog(@"isHitted Judge");
     if(pos.x -1 < x && x < (pos.x + width + 1)){
         if(pos.y - 1 < y && y < (pos.y + length + 1)){
@@ -61,7 +83,7 @@
 }
 
 
--(BOOL)catchJudge:(int)x:(int)w{
+-(BOOL)catchJudge:(float)x:(float)w{
     //NSLog(@"isCatched Judge, %f", pos.y);
     pos.y += velocity;
     self.opacity *= 0.975;
