@@ -33,10 +33,11 @@
 }
 
 //ボール　運動関数
+// This function return FALSE when missed the ball
+// Other Time return TRUE
 - (BOOL)move:(float)x:(float)y:(float)w:(float)v;
 {
     BOOL returnFlag = TRUE;
-    static int gameOverFlag = 0;
     
     if(fabs(vectorx) < 0.001){
         vectorx = 1.0;
@@ -44,19 +45,7 @@
     
     self.pos.x += vectorx;
     self.pos.y += vectory;
-    
-    if(gameOverFlag == 1){
-        
-       // NSLog(@"%d", self.pos.y);
-        if(pos.y > 700) {
-            pos.x = arc4random()%280 +20;
-            pos.y = arc4random()%100 +20;
-            vectory= velocity;
-            vectorx = (arc4random()%2 - 1.0 ) * velocity;
-            gameOverFlag = 0;
-        }
-        
-    }else if(gameOverFlag == 0) {
+
         
         if(self.pos.x < 20.0){
         
@@ -97,12 +86,10 @@
 //        }
     
         if(self.pos.y > 410){
-            
-//            NSLog(@"GameOver, %d, %d, xmax:%d", self.pos.x, self.pos.y, x + w/2 +1);
-            gameOverFlag = 1;
+
             returnFlag = FALSE;
         }
-    }
+
     
     // fake gravity
     self.pos.y += 0.67;

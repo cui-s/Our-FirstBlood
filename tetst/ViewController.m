@@ -68,7 +68,7 @@
         
         
         
-        float slideFactor = 0.2 * magnitude *0.01; // Increase for more of a slide
+        float slideFactor =  magnitude *0.001; // Increase for more of a slide
         
         CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
                                          
@@ -80,7 +80,7 @@
         
         
         
-        [UIView animateWithDuration:slideFactor*1 delay:0
+        [UIView animateWithDuration:slideFactor delay:0
          
                             options:UIViewAnimationOptionCurveEaseOut animations:^{
                                 
@@ -120,10 +120,10 @@
     
     
     if(av.gameStatus == GAMEOVER){
-        if(tmp * 100 > 1500){
-//            NSLog(@"gogogo");
-            [av restart];
-        }
+//        if(tmp * 100 > 1500){
+////            NSLog(@"gogogo");
+//            [av restart];
+//        }
         [av owari];
     } else {
     
@@ -141,6 +141,9 @@
     // Dispose of any resources that can be recreated.
    
 
+}
+- (IBAction)gameAgain:(id)sender {
+    [av restart];
 }
 
 - (IBAction)changeSize:(id)sender {
@@ -164,16 +167,14 @@
     
 }
 
-- (IBAction)changeBallSpeed:(id)sender {
-    
-    
-    UISlider * sld = (UISlider *)sender;
-    
-    
-    
-    
-    
+- (IBAction)changeSPD:(id)sender {
+       av.bao.velocity = 2.75;
+       UISlider * sld = (UISlider *)sender;
+       float spd = sld.value;
+      av.bao.velocity = spd * av.bao.velocity;
+//    NSLog(@"%f",av.bao.velocity);
 }
+
 
 
 @end

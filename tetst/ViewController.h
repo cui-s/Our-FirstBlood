@@ -19,8 +19,9 @@
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *reg_z;
 @property (weak, nonatomic) IBOutlet UIImageView *imageStick;
-
+- (IBAction)gameAgain:(id)sender;
 
 - (IBAction)changeSize:(id)sender;
+- (IBAction)changeSPD:(id)sender;
 
 @end

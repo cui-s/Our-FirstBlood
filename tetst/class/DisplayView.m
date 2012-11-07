@@ -172,7 +172,9 @@
 
 -(void)okonau:(float)x:(float)y:(float)w:(float)v{
     if([self.bao move:x:y:w:v] == FALSE){
-        self.gameTime /= 2;
+        //Missed the ball, GAMEOVER
+        self.gameStatus = GAMEOVER;
+        return;
     };
     BOOL addSingal = FALSE;
     
@@ -193,8 +195,9 @@
         }
     }
     
-    if(addSingal == TRUE){//if hit S_COIN, add coins
-        [self addCoins:30];
+    //if hit S_COIN, add coins
+    if(addSingal == TRUE){
+        [self addCoins:10];
     }
     
     // NSMutableArray　削除の為
@@ -236,6 +239,9 @@
 }
 
 -(void)addCoins:(int)num{
+    if(self.coins.count > 100){
+        return;
+    }
     for(int i = 0; i < num; i++){
         Coin *coinTest = [[Coin alloc]init];
             [self.coins addObject:coinTest];
