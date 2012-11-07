@@ -11,18 +11,32 @@
 #import "Ball.h"
 #import "Wall.h"
 #import "Coin.h"
+
+static const int GAMESTART = 1;
+static const int GAMEOVER = 0;
+
 @interface DisplayView : UIView
 
-@property (nonatomic) int length;
-@property (nonatomic) int width;
-@property (nonatomic) int granularity;
+
+@property (nonatomic) int gameStatus;
+
+@property (nonatomic) float length;
+@property (nonatomic) float width;
+@property (nonatomic) float granularity;
+@property (nonatomic) float coinNum;
+@property (nonatomic) NSInteger gameScore;
+@property (nonatomic) float gameTime;
 
 @property (nonatomic) Ball* bao;
 @property (nonatomic) Wall* wallLeft;
 @property (nonatomic) Wall* wallTop;
 @property (nonatomic) Wall* wallRight;
-@property (nonatomic) Coin* coinTest;
 
--(void)okonau:(int)x:(int)y:(int)w:(int)v;
+@property (nonatomic) NSMutableArray* coins;
+
+-(void)okonau:(float)x:(float)y:(float)w:(float)v;
+-(void)addCoins:(int)num;
+-(void)owari;
+-(void)restart;
 
 @end

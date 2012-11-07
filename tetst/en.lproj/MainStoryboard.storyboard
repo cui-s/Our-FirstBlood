@@ -14,7 +14,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVD-5v-2v5">
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" image="3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-RN-VBN">
+                                    <imageView contentMode="scaleToFill" image="topWall.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-RN-VBN">
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="a3h-vG-1TE"/>
@@ -24,7 +24,7 @@
                                             <outletCollection property="gestureRecognizers" destination="2oR-AC-jU8" appends="YES" id="7Mx-q8-uGX"/>
                                         </connections>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-vQ-e8D">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-vQ-e8D">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="4oi-LS-o0A"/>
                                         </constraints>
@@ -32,21 +32,58 @@
                                             <action selector="changeSize:" destination="2" eventType="valueChanged" id="BWb-hn-fv5"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hjd-x6-lKU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNs-2n-hEg">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="eQa-Zs-amc"/>
+                                            <constraint firstAttribute="height" constant="30" id="coA-pa-gGf"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Start Again">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gameAgain:" destination="2" eventType="touchUpInside" id="e6q-1l-Vjs"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsY-6u-mrt">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="速度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSG-3C-wDg">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="NY5-fF-tGC">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="onF-wf-CKS"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeSPD:" destination="2" eventType="valueChanged" id="vhs-eG-FjX"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Hjd-x6-lKU" firstAttribute="top" secondItem="dF6-vQ-e8D" secondAttribute="top" type="default" id="0u3-LS-Mvg"/>
-                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="centerX" secondItem="ZVD-5v-2v5" secondAttribute="centerX" type="default" id="HrD-1L-Ran"/>
-                                    <constraint firstItem="dF6-vQ-e8D" firstAttribute="leading" secondItem="ZVD-5v-2v5" secondAttribute="leading" constant="60" id="VKJ-Dg-pFq"/>
-                                    <constraint firstItem="dF6-vQ-e8D" firstAttribute="top" secondItem="JLP-RN-VBN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ynd-cq-ngs"/>
-                                    <constraint firstItem="JLP-RN-VBN" firstAttribute="top" secondItem="ZVD-5v-2v5" secondAttribute="top" constant="405" scoringType="5" id="drP-iQ-0cV"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hjd-x6-lKU" secondAttribute="trailing" constant="50" id="m7R-Ge-3ME"/>
-                                    <constraint firstAttribute="bottom" secondItem="dF6-vQ-e8D" secondAttribute="bottom" constant="89" id="shR-vs-fmg"/>
+                                    <constraint firstItem="ZSG-3C-wDg" firstAttribute="leading" secondItem="CNs-2n-hEg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5fq-bG-AFm"/>
+                                    <constraint firstAttribute="bottom" secondItem="JLP-RN-VBN" secondAttribute="bottom" constant="141" id="8JH-8c-tFE"/>
+                                    <constraint firstItem="ZSG-3C-wDg" firstAttribute="centerY" secondItem="dF6-vQ-e8D" secondAttribute="centerY" type="default" id="CbM-nO-H4M"/>
+                                    <constraint firstItem="ZSG-3C-wDg" firstAttribute="baseline" secondItem="CNs-2n-hEg" secondAttribute="baseline" type="default" id="Dln-Gx-PxD"/>
+                                    <constraint firstItem="dF6-vQ-e8D" firstAttribute="top" secondItem="ZVD-5v-2v5" secondAttribute="top" constant="431" scoringType="5" id="EcJ-bo-X0V"/>
+                                    <constraint firstAttribute="bottom" secondItem="vsY-6u-mrt" secondAttribute="bottom" constant="108" id="LC1-30-CH0"/>
+                                    <constraint firstAttribute="bottom" secondItem="dF6-vQ-e8D" secondAttribute="bottom" constant="95" id="MsJ-tG-egY"/>
+                                    <constraint firstItem="dF6-vQ-e8D" firstAttribute="leading" secondItem="vsY-6u-mrt" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OhZ-fZ-2bA"/>
+                                    <constraint firstItem="CNs-2n-hEg" firstAttribute="centerX" secondItem="ZVD-5v-2v5" secondAttribute="centerX" type="default" id="Ox4-0J-t3W"/>
+                                    <constraint firstAttribute="trailing" secondItem="NY5-fF-tGC" secondAttribute="trailing" constant="8" id="T85-vU-gts"/>
+                                    <constraint firstItem="ZSG-3C-wDg" firstAttribute="top" secondItem="NY5-fF-tGC" secondAttribute="top" type="default" id="WhZ-sb-0Dv"/>
+                                    <constraint firstItem="CNs-2n-hEg" firstAttribute="leading" secondItem="dF6-vQ-e8D" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Zs6-Ye-aWb"/>
+                                    <constraint firstItem="CNs-2n-hEg" firstAttribute="centerY" secondItem="NY5-fF-tGC" secondAttribute="centerY" type="default" id="a5M-Cb-yKW"/>
+                                    <constraint firstAttribute="bottom" secondItem="CNs-2n-hEg" secondAttribute="bottom" constant="101" id="nvm-6a-1Mq"/>
+                                    <constraint firstItem="CNs-2n-hEg" firstAttribute="centerX" secondItem="JLP-RN-VBN" secondAttribute="centerX" type="default" id="vxA-vO-H17"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -72,7 +109,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3.jpg" width="321" height="346"/>
+        <image name="topWall.jpg" width="379" height="20"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -81,8 +118,9 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="changeBallSpeed:"/>
+                <relationship kind="action" name="changeSPD:"/>
                 <relationship kind="action" name="changeSize:"/>
+                <relationship kind="action" name="gameAgain:"/>
                 <relationship kind="action" name="handlePan:" candidateClass="UIPanGestureRecognizer"/>
                 <relationship kind="outlet" name="imageStick" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="reg_z" candidateClass="UIPanGestureRecognizer"/>

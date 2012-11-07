@@ -36,4 +36,13 @@
     return thePath;
 }
 
+- (CGRect)generateRect{
+    CGRect theRect;
+    theRect.origin.x = pos.x;
+    theRect.origin.y = pos.y;
+    theRect.size.height = length;
+    theRect.size.width = width;
+    return theRect;
+}
+
 @end
