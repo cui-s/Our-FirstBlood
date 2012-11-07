@@ -12,6 +12,7 @@
 		3F4E584D163F609A00166022 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584B163F609A00166022 /* Ball.m */; };
 		3F4E5850163F691700166022 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E584F163F691700166022 /* Wall.m */; };
 		3F4E585D163F6BF600166022 /* MyPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E585C163F6BF600166022 /* MyPoint.m */; };
+		3F5D598A1640C38D004B91E4 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D59891640C38D004B91E4 /* Coin.m */; };
 		3F69FC0C163E728C0053F7EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0B163E728C0053F7EA /* UIKit.framework */; };
 		3F69FC0E163E728C0053F7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0D163E728C0053F7EA /* Foundation.framework */; };
 		3F69FC10163E728C0053F7EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F69FC0F163E728C0053F7EA /* CoreGraphics.framework */; };
@@ -24,6 +25,11 @@
 		3F69FC25163E728C0053F7EA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F69FC23163E728C0053F7EA /* MainStoryboard.storyboard */; };
 		3F69FC28163E728C0053F7EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F69FC27163E728C0053F7EA /* ViewController.m */; };
 		3F69FC37163E77900053F7EA /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F69FC36163E77900053F7EA /* 3.jpg */; };
+		3F6DCF6616439009000317CB /* topWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF6316439009000317CB /* topWall.jpg */; };
+		3F6DCF6716439009000317CB /* rightWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF6416439009000317CB /* rightWall.jpg */; };
+		3F6DCF6816439009000317CB /* leftWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF6516439009000317CB /* leftWall.jpg */; };
+		3F6DCF6A164394BD000317CB /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DCF69164394BD000317CB /* background.jpg */; };
+		3F6F1DCE16425946007559E9 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F1DCD16425946007559E9 /* Color.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,8 @@
 		3F4E584F163F691700166022 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wall.m; path = class/Wall.m; sourceTree = "<group>"; };
 		3F4E585B163F6BF600166022 /* MyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPoint.h; path = class/basic/MyPoint.h; sourceTree = "<group>"; };
 		3F4E585C163F6BF600166022 /* MyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPoint.m; path = class/basic/MyPoint.m; sourceTree = "<group>"; };
+		3F5D59881640C38D004B91E4 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coin.h; path = class/Coin.h; sourceTree = "<group>"; };
+		3F5D59891640C38D004B91E4 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coin.m; path = class/Coin.m; sourceTree = "<group>"; };
 		3F69FC07163E728C0053F7EA /* tetst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F69FC0B163E728C0053F7EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F69FC0D163E728C0053F7EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +62,12 @@
 		3F69FC26163E728C0053F7EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3F69FC27163E728C0053F7EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F69FC36163E77900053F7EA /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = res/3.jpg; sourceTree = "<group>"; };
+		3F6DCF6316439009000317CB /* topWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = topWall.jpg; path = res/topWall.jpg; sourceTree = "<group>"; };
+		3F6DCF6416439009000317CB /* rightWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rightWall.jpg; path = res/rightWall.jpg; sourceTree = "<group>"; };
+		3F6DCF6516439009000317CB /* leftWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = leftWall.jpg; path = res/leftWall.jpg; sourceTree = "<group>"; };
+		3F6DCF69164394BD000317CB /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = res/background.jpg; sourceTree = "<group>"; };
+		3F6F1DCC16425946007559E9 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Color.h; path = class/basic/Color.h; sourceTree = "<group>"; };
+		3F6F1DCD16425946007559E9 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Color.m; path = class/basic/Color.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,8 @@
 				3F4E585C163F6BF600166022 /* MyPoint.m */,
 				3F2FD51A163FAE0000F46706 /* MyRect.h */,
 				3F2FD51B163FAE0000F46706 /* MyRect.m */,
+				3F6F1DCC16425946007559E9 /* Color.h */,
+				3F6F1DCD16425946007559E9 /* Color.m */,
 			);
 			name = basic;
 			sourceTree = "<group>";
@@ -125,6 +141,10 @@
 		3F69FC12163E728C0053F7EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F6DCF69164394BD000317CB /* background.jpg */,
+				3F6DCF6316439009000317CB /* topWall.jpg */,
+				3F6DCF6416439009000317CB /* rightWall.jpg */,
+				3F6DCF6516439009000317CB /* leftWall.jpg */,
 				3F69FC36163E77900053F7EA /* 3.jpg */,
 				3F69FC13163E728C0053F7EA /* tetst-Info.plist */,
 				3F69FC14163E728C0053F7EA /* InfoPlist.strings */,
@@ -147,6 +167,8 @@
 				3F4E5849163F603A00166022 /* DisplayView.m */,
 				3F4E584E163F691700166022 /* Wall.h */,
 				3F4E584F163F691700166022 /* Wall.m */,
+				3F5D59881640C38D004B91E4 /* Coin.h */,
+				3F5D59891640C38D004B91E4 /* Coin.m */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -208,6 +230,10 @@
 				3F69FC22163E728C0053F7EA /* Default-568h@2x.png in Resources */,
 				3F69FC25163E728C0053F7EA /* MainStoryboard.storyboard in Resources */,
 				3F69FC37163E77900053F7EA /* 3.jpg in Resources */,
+				3F6DCF6616439009000317CB /* topWall.jpg in Resources */,
+				3F6DCF6716439009000317CB /* rightWall.jpg in Resources */,
+				3F6DCF6816439009000317CB /* leftWall.jpg in Resources */,
+				3F6DCF6A164394BD000317CB /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +252,8 @@
 				3F4E5850163F691700166022 /* Wall.m in Sources */,
 				3F4E585D163F6BF600166022 /* MyPoint.m in Sources */,
 				3F2FD51C163FAE0000F46706 /* MyRect.m in Sources */,
+				3F5D598A1640C38D004B91E4 /* Coin.m in Sources */,
+				3F6F1DCE16425946007559E9 /* Color.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

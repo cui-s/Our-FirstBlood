@@ -30,9 +30,9 @@
     
     
     [[self view] addSubview:av];
-    
+    //create timer
     NSTimer *timer;
-    timer = [NSTimer scheduledTimerWithTimeInterval: 0.01
+    timer = [NSTimer scheduledTimerWithTimeInterval: 0.017
                                              target: self
                                            selector: @selector(handleTimer:)
                                            userInfo: nil
@@ -40,6 +40,8 @@
 }
 
 //Inertia Moving
+
+
 -(IBAction)handlePan:(UIPanGestureRecognizer *)recongizer{
     
     CGPoint translation = [recongizer translationInView:self.view];
@@ -53,51 +55,50 @@
     [recongizer setTranslation:CGPointMake(0, 0) inView:self.view];
     
     if (recongizer.state == UIGestureRecognizerStateEnded) {
-//        
-//        
-//        
-//        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
-//        
-//        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
-//        
-//        CGFloat slideMult = magnitude / 280;
-//        
-////        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
-//        
-//        
-//        
-//        float slideFactor = 0.1 * slideMult; // Increase for more of a slide
-//        
-//        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
-//                                         
-//                                         recongizer.view.center.y );
-//        
-//        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
-//        
-//        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
-//        
-//        
-//        
-//        [UIView animateWithDuration:slideFactor*2 delay:0
-//         
-//                            options:UIViewAnimationOptionCurveEaseOut animations:^{
-//                                
-//                                recongizer.view.center = finalPoint;
-//                                
-//                            } completion:nil];
-//        
-//        
+        
+        
+        
+        CGPoint velocity = [recongizer velocityInView:self.view];//define the velocity
+        
+        CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));//y disabled,define the speed
+        
+      
+        
+//        NSLog(@"magnitude: %f, slideMult: %f", magnitude, slideMult);
+        
+        
+        
+        float slideFactor =  magnitude *0.001; // Increase for more of a slide
+        
+        CGPoint finalPoint = CGPointMake(recongizer.view.center.x + (velocity.x * slideFactor),
+                                         
+                                         recongizer.view.center.y );
+        
+        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.view.bounds.size.width);
+        
+        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.view.bounds.size.height);
+        
+        
+        
+        [UIView animateWithDuration:slideFactor delay:0
+         
+                            options:UIViewAnimationOptionCurveEaseOut animations:^{
+                                
+                                recongizer.view.center = finalPoint;
+                                
+                            } completion:nil];
+        
+        
         
     }
     
-    if(recongizer.self.view.center.x>=280)
+    if(recongizer.self.view.center.x>=300-self.imageStick.bounds.size.width/2)
         
-        recongizer.view.center = CGPointMake(280,recongizer.view.center.y);
+        recongizer.view.center = CGPointMake(300-self.imageStick.bounds.size.width/2,recongizer.view.center.y);
     
-    if(recongizer.self.view.center.x<=40)
+    if(recongizer.self.view.center.x<=20+self.imageStick.bounds.size.width/2)
         
-        recongizer.view.center = CGPointMake(40,recongizer.view.center.y);
-    
+        recongizer.view.center = CGPointMake(20+self.imageStick.bounds.size.width/2,recongizer.view.center.y);
 }
 
 
@@ -106,7 +107,7 @@
 - (void) handleTimer: (NSTimer *) timer
 {
     //cacluate velocity
-    CGPoint velocity = [self.reg_z velocityInView:self.view];
+//    CGPoint velocity = [self.reg_z velocityInView:self.view];
     
     GLfloat imaNoBarPostion = self.reg_z.view.center.x;
     
@@ -117,11 +118,20 @@
     sakiNoBarPosition = imaNoBarPostion;
 //    NSLog(@"%3.1f", tmp*100 );
     
-    //dual
-    [av okonau:self.reg_z.view.center.x
+    
+    if(av.gameStatus == GAMEOVER){
+//        if(tmp * 100 > 1500){
+////            NSLog(@"gogogo");
+//            [av restart];
+//        }
+        [av owari];
+    } else {
+    
+        [av okonau:self.reg_z.view.center.x
               :self.reg_z.view.center.y
               :self.reg_z.view.bounds.size.width
               :tmp*100.0];
+    }
     
 }
 
@@ -132,5 +142,39 @@
    
 
 }
+- (IBAction)gameAgain:(id)sender {
+    [av restart];
+}
+
+- (IBAction)changeSize:(id)sender {
+    
+    
+    UISlider * sld = (UISlider *)sender;
+    float size = sld.value;
+    
+    self.imageStick.bounds = CGRectMake(0, 0, 80*size, 24);
+//    NSLog(@"%f",self.self.reg_z.view.center.x);
+    
+//    NSLog(@"%f",self.imageStick.bounds.size.width);
+    if (self.reg_z.view.center.x - self.imageStick.bounds.size.width/2<20) {
+        self.reg_z.view.center = CGPointMake(20+self.imageStick.bounds.size.width/2,self.reg_z.view.center.y);
+    }
+    if (self.reg_z.view.center.x + self.imageStick.bounds.size.width/2>300) {
+        self.reg_z.view.center = CGPointMake(300-self.imageStick.bounds.size.width/2,self.reg_z.view.center.y);
+        
+        
+    }
+    
+}
+
+- (IBAction)changeSPD:(id)sender {
+       av.bao.velocity = 2.75;
+       UISlider * sld = (UISlider *)sender;
+       float spd = sld.value;
+      av.bao.velocity = spd * av.bao.velocity;
+//    NSLog(@"%f",av.bao.velocity);
+}
+
+
 
 @end

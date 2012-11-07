@@ -17,8 +17,8 @@
 {
     
     if(self == [super init]){
-        x = 0;
-        y = 0;
+        x = 0.0;
+        y = 0.0;
     }
     return self;
 }
