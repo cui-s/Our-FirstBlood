@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+
+#import "MBGSocialService.h"
+#import "GameCrossPromotionDelegate.h"
+#import "MobageDashboardDelegate.h"
+#import "MBGPlatform.h"
+#import "ViewController.h"
+
+@interface AppDelegate : NSObject <UIApplicationDelegate, MBGPlatformDelegate, MobageDashboardDelegate, GameCrossPromotionDelegate>
+
 
 @property (strong, nonatomic) UIWindow *window;
 
