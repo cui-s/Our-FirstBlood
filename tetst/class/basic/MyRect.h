@@ -11,15 +11,16 @@
 
 @interface MyRect : NSObject{
     MyPoint* pos;
-    int length;
-    int width;
+    float length;
+    float width;
 }
-- (void)move:(int)x:(int)y:(int)w;
 
 @property (readwrite, nonatomic) MyPoint* pos;
-@property (readwrite, nonatomic) int length;
-@property (readwrite, nonatomic) int width;
+@property (readwrite, nonatomic) float length;
+@property (readwrite, nonatomic) float width;
 
 - (CGMutablePathRef)generatePath;
+
+- (CGRect)generateRect;
 
 @end
